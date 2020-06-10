@@ -27,6 +27,6 @@ before_deploy:
 deploy:
   - provider: script
     script: npx semantic-release
-    cleanup: false
+    skip_cleanup: true
     on:
       branch: master
