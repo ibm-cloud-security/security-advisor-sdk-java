@@ -43,6 +43,7 @@ public abstract class SdkIntegrationTestBase extends PowerMockTestCase {
      * @return
      */
     protected boolean skipTests() {
+        System.out.println("Skipping tests");  
         return skipTests;
     }
 
