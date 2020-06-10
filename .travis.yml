@@ -1,0 +1,32 @@
+---
+language: java
+dist: xenial
+os: linux
+jdk:
+- openjdk8
+branches:
+  except:
+  - gh-pages
+cache:
+  directories:
+  - "$HOME/.m2"
+before_install:
+- sudo apt-get update
+- sudo apt-get install python
+- nvm install 12
+- npm install -g npm@6.x
+install: true
+script:
+-  mvn clean package
+before_deploy:
+- pip install --user bump2version
+- npm install @semantic-release/changelog
+- npm install @semantic-release/exec
+- npm install @semantic-release/git
+- npm install @semantic-release/github
+deploy:
+  - provider: script
+    script: npx semantic-release
+    cleanup: false
+    on:
+      branch: master
