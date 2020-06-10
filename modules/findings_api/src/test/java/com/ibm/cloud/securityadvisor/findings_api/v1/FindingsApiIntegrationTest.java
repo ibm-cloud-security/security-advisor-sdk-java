@@ -110,6 +110,9 @@ public class FindingsApiIntegrationTest extends PowerMockTestCase {
                                 .card(cardModel).build();
 
                 Response<ApiNote> resp = findingsApi.createNote(createNoteOptionsModel).execute();
+                if (resp.getStatusCode() == 200) {
+                        throw new ServiceResponseException(200, null);
+                }
                 assertNotNull(resp);
                 assertEquals(resp.getStatusCode(), 200);
         }
@@ -172,6 +175,9 @@ public class FindingsApiIntegrationTest extends PowerMockTestCase {
                                 .card(cardModel).build();
 
                 Response<ApiNote> resp = findingsApi.updateNote(opts).execute();
+                if (resp.getStatusCode() == 200) {
+                        throw new ServiceResponseException(200, null);
+                }
                 assertNotNull(resp);
                 assertEquals(resp.getStatusCode(), 200);
         }
@@ -181,7 +187,7 @@ public class FindingsApiIntegrationTest extends PowerMockTestCase {
                 findingsApi.setServiceUrl(ApiUrl);
 
                 DeleteNoteOptions opts = new DeleteNoteOptions.Builder().accountId(AccountId).providerId("test")
-                                .noteId("testString-card").build();
+                                .noteId("test1").build();
 
                 Response<Void> resp = findingsApi.deleteNote(opts).execute();
                 assertNotNull(resp);
