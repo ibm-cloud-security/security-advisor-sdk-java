@@ -12,7 +12,7 @@
     <description>Java Client Library to access the IBM Cloud Security Advisor</description>
 
     <!-- >>> Update this field to reflect your project's github URL -->
-    <url>https://github.ibm.com/gauragos/securityadvisor-java-sdk</url>
+    <url>https://github.com/ibm-cloud-security/security-advisor-sdk-java </url>
 
     <groupId>com.ibm.cloud</groupId>
     <version>1.0.0</version>
@@ -27,7 +27,7 @@
         <sdk-core-version>8.3.0</sdk-core-version>
 
         <!-- >>> Replace this with the name of your SDK's github repository -->
-        <git-repository-name>securityadvsior-java-sdk</git-repository-name>
+        <git-repository-name>securityadvsior-sdk-java</git-repository-name>
 
         <testng-version>7.1.0</testng-version>
         <okhttp3-version>3.13.1</okhttp3-version>
@@ -47,13 +47,7 @@
         <powermock-version>2.0.5</powermock-version>
         <mockito-version>3.2.4</mockito-version>
 
-        <!-- Deployment-related properties -->
-        <!-- <bintray.org>bintray-gauragos-ibmcloud-securityadvisor-java-sdk</bintray.org> -->
-        <!-- >>> Replace this with the name of your project's bintray repository -->
-        <!-- <bintray.repo>bintray</bintray.repo> -->
-        <!-- >>> Replace this with your github repository's URL -->
-        <!-- <bintray.package.url>https://dl.bintray.com/gauragos/ibmcloud-securityadvisor-java-sdk</bintray.package.url> -->
-    </properties>
+      </properties>
 
     <modules>
         <!-- This module should always be listed first -->
@@ -82,46 +76,23 @@
 
     <!-- >>> Update these values to reflect your project -->
     <scm>
-        <connection>scm:git:https://github.ibm.com/gauragos/securityadvisor-java-sdk</connection>
-        <developerConnection>scm:git:https://github.ibm.com/gauragos/securityadvisor-java-sdk</developerConnection>
-        <url>https://github.ibm.com/gauragos/securityadvisor-java-sdk/tree/master</url>
+        <connection>scm:git:https://github.com/ibm-cloud-security/security-advisor-sdk-java </connection>
+        <developerConnection>scm:git:https://github.com/ibm-cloud-security/security-advisor-sdk-java</developerConnection>
+        <url>https://github.com/ibm-cloud-security/security-advisor-sdk-java/tree/master</url>
     </scm>
 
     <!-- >>> Update these values to reflect your project -->
     <issueManagement>
         <system>Github</system>
-        <url>https://github.ibm.com/gauragos/securityadvisor-java-sdk/issues</url>
+        <url>https://github.com/ibm-cloud-security/security-advisor-sdk-java/issues</url>
     </issueManagement>
 
     <!-- >>> Update these values to reflect your project -->
     <ciManagement>
         <system>Travis-CI</system>
-        <url>https://travis.ibm.com/gauragos/securityadvisor-java-sdk/</url>
+        <url>https://travis-ci.org/github/ibm-cloud-security/security-advisor-sdk-java</url>
     </ciManagement>
 
-    <repositories>
-        <!-- these definitions are useful only for internal SDK projects -->
-        <repository>
-            <id>na-artifactory-ibmcloud-sdks</id>
-            <url>https://na.artifactory.swg-devops.com:443/artifactory/wcp-ibmcloud-sdks-team-maven-local/</url>
-        </repository>
-
-        <repository>
-            <id>jcenter</id>
-            <url>https://jcenter.bintray.com/</url>
-        </repository>
-    </repositories>
-
-    <!-- <distributionManagement>
-        <repository>
-            <id>na-artifactory-ibmcloud-sdks</id>
-            <url>https://na.artifactory.swg-devops.com:443/artifactory/wcp-ibmcloud-sdks-team-maven-local</url>
-        </repository>
-        <snapshotRepository>
-            <id>na-artifactory-sdkcodegen</id>
-            <url>https://na.artifactory.swg-devops.com:443/artifactory/wcp-ibmcloud-sdks-team-maven-local</url>
-        </snapshotRepository>
-    </distributionManagement> -->
 
     <dependencyManagement>
         <dependencies>
@@ -470,8 +441,18 @@
 
     <developers>
         <developer>
-            <name>IBM Cloud DevX SDK Development</name>
-            <email>devxsdk@us.ibm.com</email>
+            <name>IBM Cloud Security Advisor team</name>
+            <email>skairali@in.ibm.com</email>
+            <url>https://www.ibm.com/</url>
+        </developer>
+        <developer>
+            <name>IBM Cloud Security Advisor team</name>
+            <email>ashishth@in.ibm.com</email>
+            <url>https://www.ibm.com/</url>
+        </developer>
+        <developer>
+            <name>IBM Cloud Security Advisor team</name>
+            <email>vkalangu@in.ibm.com</email>
             <url>https://www.ibm.com/</url>
         </developer>
     </developers>
