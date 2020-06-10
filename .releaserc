@@ -1,5 +1,6 @@
 {
   "debug": true,
+  "tagFormat": "${version}",
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
@@ -10,6 +11,25 @@
         "message": "chore(release): ${nextRelease.version} release notes\n\n${nextRelease.notes}"
       }
     ],
-    "@semantic-release/github"
+    [
+      "@semantic-release/github",
+      {
+        "assets": 
+        [
+          {
+            "path": "modules/findings_api/target/findings_api-1.0.0.jar", "label": "findings_api-${nextRelease.version}.jar", "name": "findings_api-${nextRelease.version}.jar"
+          },
+          {
+            "path": "modules/notifications_api/target/notifications_api-1.0.0.jar", "label": "notifications_api-${nextRelease.version}.jar", "name": "notifications_api-${nextRelease.version}.jar"
+          },
+          {
+            "path": "modules/findings_api/target/findings_api-1.0.0-javadoc.jar", "label": "findings_api_javadoc-${nextRelease.version}.jar", "name": "findings_api_javadoc-${nextRelease.version}.jar"
+          },
+          {
+            "path": "modules/notifications_api/target/notifications_api-1.0.0-javadoc.jar", "label": "notifications_api_javadoc-${nextRelease.version}.jar", "name": "notifications_api_javadoc-${nextRelease.version}.jar"
+          }
+        ]
+      }
+    ]
   ]
 }
