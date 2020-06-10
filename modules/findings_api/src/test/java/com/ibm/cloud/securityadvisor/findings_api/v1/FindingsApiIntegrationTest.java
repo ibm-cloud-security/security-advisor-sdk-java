@@ -182,7 +182,7 @@ public class FindingsApiIntegrationTest extends PowerMockTestCase {
                 assertEquals(resp.getStatusCode(), 200);
         }
 
-        @Test(expectedExceptions = NotFoundException.class)
+        @Test(expectedExceptions = {NotFoundException.class, ServiceResponseException.class})
         public void testDeleteNote() throws Throwable {
                 findingsApi.setServiceUrl(ApiUrl);
 
@@ -190,6 +190,9 @@ public class FindingsApiIntegrationTest extends PowerMockTestCase {
                                 .noteId("test1").build();
 
                 Response<Void> resp = findingsApi.deleteNote(opts).execute();
+                if (resp.getStatusCode() == 200) {
+                        throw new ServiceResponseException(200, null);
+                }
                 assertNotNull(resp);
                 assertEquals(resp.getStatusCode(), 200);
         }
