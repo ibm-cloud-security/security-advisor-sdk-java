@@ -42,8 +42,7 @@ public abstract class SdkIntegrationTestBase extends PowerMockTestCase {
      * lack of an external configuration file.
      * @return
      */
-    protected boolean skipTests() {
-        System.out.println("Skipping tests");  
+    protected boolean skipTests() { 
         return skipTests;
     }
 
