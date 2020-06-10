@@ -39,8 +39,8 @@ The IBM Cloud Security Advisor Java SDK allows developers to programmatically in
 
 Service Name | Artifact Coordinates
 --- | --- 
-[IBM Cloud Security Advisor Findings API](https://cloud.ibm.com/apidocs/findings) | com.ibm.cloud.securityadvisor:findings_api:1.7.0
-[IBM Cloud Security Advisor Notifications API](https://cloud.ibm.com/apidocs/notifications) | com.ibm.cloud.securityadvisor:notifications_api:1.7.0
+[IBM Cloud Security Advisor Findings API](https://cloud.ibm.com/apidocs/findings) | com.ibm.cloud.securityadvisor:findings_api:1.0.0
+[IBM Cloud Security Advisor Notifications API](https://cloud.ibm.com/apidocs/notifications) | com.ibm.cloud.securityadvisor:notifications_api:1.0.0
 
 ## Prerequisites
 
@@ -51,7 +51,7 @@ Service Name | Artifact Coordinates
 * Java 8 or above.
 
 ## Installation
-The current version of this SDK is: 1.7.0
+The current version of this SDK is: 1.0.0
 
 Each service's artifact coordinates are listed in the table above.
 
@@ -73,21 +73,21 @@ artifact coordinates (group id, artifact id and version) for the service, like t
 <dependency>
     <groupId>com.ibm.cloud</groupId>
     <artifactId>securityadvisor</artifactId>
-    <version>1.7.0</version>
+    <version>1.0.0</version>
 </dependency>
 ```
 
 ##### Gradle
 ```gradle
-'com.ibm.cloud:securityadvisor:1.7.0'
+'com.ibm.cloud:securityadvisor:1.0.0'
 ```
 
 ## Using the SDK
 For general SDK usage information, please see [this link](https://github.com/IBM/ibm-cloud-sdk-common/blob/master/README.md)
 
-For Findings API module usage information of the SDK, please see [this link](https://github.ibm.com/gauragos/securityadvisor-java-sdk/tree/master/modules/findings_api)
+For Findings API module usage information of the SDK, please see [this link](https://github.ibm.com/ibm-cloud-security/security-advisor-sdk-java/tree/master/modules/findings_api)
 
-For Notifications API module usage information of the SDK, please see [this link](https://github.ibm.com/gauragos/securityadvisor-java-sdk/tree/master/modules/notifications_api)
+For Notifications API module usage information of the SDK, please see [this link](https://github.ibm.com/ibm-cloud-security/security-advisor-sdk-java/tree/master/modules/notifications_api)
 
 
 ## Questions
