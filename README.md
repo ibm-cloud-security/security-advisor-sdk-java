@@ -2,7 +2,7 @@
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 # IBM Cloud Security Advisor Java SDK Version 1.0.0
-Java client library to interact with various [IBM Cloud Security Advisor](https://cloud.ibm.com/apidocs?category=<service-category>).
+Java client library to interact with various [IBM Cloud Security Advisor](https://cloud.ibm.com/apidocs?category=security).
 
 Disclaimer: this SDK is being released initially as a **pre-release** version.
 Changes might occur which impact applications that use this SDK.
@@ -55,15 +55,6 @@ The current version of this SDK is: 1.0.0
 
 Each service's artifact coordinates are listed in the table above.
 
-The project artifacts are published on the following public maven repositories:
-- [JCenter](https://bintray.com/bintray/jcenter) - For information on how to use the
-public JCenter maven repository, open [this link](https://bintray.com/bintray/jcenter)
-then click the `Set Me Up!` button.
-- [Maven Central](https://repo1.maven.org/maven2/) - This is the default public repository
-used by maven when searching for dependencies.  To use this repository within your
-gradle build, please see
-[this link](https://docs.gradle.org/current/userguide/declaring_repositories.html).
-
 To use a particular service, define a dependency that contains the
 artifact coordinates (group id, artifact id and version) for the service, like this:
 
@@ -85,9 +76,9 @@ artifact coordinates (group id, artifact id and version) for the service, like t
 ## Using the SDK
 For general SDK usage information, please see [this link](https://github.com/IBM/ibm-cloud-sdk-common/blob/master/README.md)
 
-For Findings API module usage information of the SDK, please see [this link](https://github.ibm.com/ibm-cloud-security/security-advisor-sdk-java/tree/master/modules/findings_api)
+For Findings API module usage information of the SDK, please see [this link](https://github.com/ibm-cloud-security/security-advisor-sdk-java/tree/master/modules/findings_api)
 
-For Notifications API module usage information of the SDK, please see [this link](https://github.ibm.com/ibm-cloud-security/security-advisor-sdk-java/tree/master/modules/notifications_api)
+For Notifications API module usage information of the SDK, please see [this link](https://github.com/ibm-cloud-security/security-advisor-sdk-java/tree/master/modules/notifications_api)
 
 
 ## Questions
@@ -98,7 +89,7 @@ please ask a question at
 
 ## Issues
 If you encounter an issue with the project, you are welcome to submit a
-[bug report](<github-repo-url>/issues).
+[bug report](https://github.com/ibm-cloud-security/security-advisor-sdk-java/issues).
 Before that, please search for similar issues. It's possible that someone has already reported the problem.
 
 ## Open source @ IBM
@@ -109,5 +100,5 @@ See [CONTRIBUTING](CONTRIBUTING.md).
 
 ## License
 
-The IBM Cloud MySDK Java SDK is released under the Apache 2.0 license.
+The IBM Cloud Security Advisor Java SDK is released under the Apache 2.0 license.
 The license's full text can be found in [LICENSE](LICENSE).
