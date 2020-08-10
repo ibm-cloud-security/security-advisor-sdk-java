@@ -19,9 +19,21 @@ import com.ibm.cloud.sdk.core.service.model.GenericModel;
  */
 public class ChannelResponseDefinitionSeverity extends GenericModel {
 
+  protected Boolean critical;
   protected Boolean high;
   protected Boolean medium;
   protected Boolean low;
+
+  /**
+   * Gets the critical.
+   *
+   * Critical Severity.
+   *
+   * @return the critical
+   */
+  public Boolean isCritical() {
+    return critical;
+  }
 
   /**
    * Gets the high.
