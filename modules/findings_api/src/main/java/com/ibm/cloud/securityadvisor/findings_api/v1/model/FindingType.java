@@ -33,6 +33,8 @@ public class FindingType extends GenericModel {
     String MEDIUM = "MEDIUM";
     /** HIGH. */
     String HIGH = "HIGH";
+    /** CRITICAL. */
+    String CRITICAL = "CRITICAL";
   }
 
   protected String severity;

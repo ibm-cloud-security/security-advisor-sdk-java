@@ -47,6 +47,7 @@ public class NotificationsApiIntegrationTest extends PowerMockTestCase {
         ListAllChannelsOptions opts = new ListAllChannelsOptions.Builder().accountId(AccountId).build();
 
         Response<ListChannelsResponse> resp = notificationsApi.listAllChannels(opts).execute();
+
         assertNotNull(resp);
         assertEquals(resp.getStatusCode(), 200);
     }
@@ -62,7 +63,7 @@ public class NotificationsApiIntegrationTest extends PowerMockTestCase {
 
             CreateNotificationChannelOptions createNotificationChannelOptionsModel = new CreateNotificationChannelOptions.Builder()
                     .accountId(AccountId).name("testString").type("Webhook").endpoint("https://cloud.ibm.com")
-                    .description("testString").severity(new java.util.ArrayList<String>(java.util.Arrays.asList("low")))
+                    .description("testString").severity(new java.util.ArrayList<String>(java.util.Arrays.asList("low", "critical")))
                     .enabled(true).alertSource(new java.util.ArrayList<NotificationChannelAlertSourceItem>(
                             java.util.Arrays.asList(notificationChannelAlertSourceItemModel)))
                     .build();
