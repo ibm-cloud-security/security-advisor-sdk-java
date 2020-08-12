@@ -37,6 +37,8 @@ public class CreateNotificationChannelOptions extends GenericModel {
     String MEDIUM = "medium";
     /** high. */
     String HIGH = "high";
+    /** critical. */
+    String CRITICAL = "critical";
   }
 
   protected String accountId;

@@ -252,7 +252,7 @@ public class FindingsApiIntegrationTest extends PowerMockTestCase {
                                         .environmentName("testString").componentName("testString")
                                         .toolchainId("testString").build();
 
-                        Finding findingModel = new Finding.Builder().severity("LOW").certainty("LOW")
+                        Finding findingModel = new Finding.Builder().severity("CRITICAL").certainty("LOW")
                                         .nextSteps(new java.util.ArrayList<RemediationStep>(
                                                         java.util.Arrays.asList(remediationStepModel)))
                                         .networkConnection(networkConnectionModel).dataTransferred(dataTransferredModel)
@@ -330,7 +330,7 @@ public class FindingsApiIntegrationTest extends PowerMockTestCase {
                                         .environmentName("testString").componentName("testString")
                                         .toolchainId("testString").build();
 
-                        Finding findingModel = new Finding.Builder().severity("LOW").certainty("LOW")
+                        Finding findingModel = new Finding.Builder().severity("CRITICAL").certainty("LOW")
                                         .nextSteps(new java.util.ArrayList<RemediationStep>(
                                                         java.util.Arrays.asList(remediationStepModel)))
                                         .networkConnection(networkConnectionModel).dataTransferred(dataTransferredModel)
