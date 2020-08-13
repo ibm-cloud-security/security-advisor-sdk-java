@@ -1,3 +1,12 @@
+## [1.0.2](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.0.1...1.0.2) (2020-08-13)
+
+
+### Bug Fixes
+
+* **critical-sev:** Added critical sev in create channel example ([0bbb696](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/0bbb69666dd5f6789e98a28a32b8f998d90c900d))
+* **critical-sev:** Added critical sev in create channel example ([8c37387](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/8c373873b9ba1826acfe7c22237c4aabb80e444e))
+* **critical-sev:** Added critical sev in create channel example ([f32e9cb](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/f32e9cbf81dac5dd6ed9292f820a25364199aa6d))
+
 ## [1.0.1](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.0.0...1.0.1) (2020-06-10)
 
 
