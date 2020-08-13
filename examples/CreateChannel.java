@@ -29,7 +29,7 @@ public class CreateChannel {
         .type("Webhook")
         .endpoint("http://test.com")
         .enabled(true)
-        .severity(new java.util.ArrayList<String>(java.util.Arrays.asList("low")))
+        .severity(new java.util.ArrayList<String>(java.util.Arrays.asList("low", "critical")))
         .accountId("<accountId>")
         .alertSource(new java.util.ArrayList<NotificationChannelAlertSourceItem>(java.util.Arrays.asList(notificationChannelAlertSourceItemModel)))
         .build();
