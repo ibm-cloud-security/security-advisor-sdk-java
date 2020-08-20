@@ -33,7 +33,7 @@ public class SdkCommon {
      */
     private static String userAgent;
 
-    private static String projectName;
+    private static String projectName = "ibm-security-advisor-java-sdk";
     private static String version;
 
     // >>> Replace "my-services" with the parent project's artifactId (e.g. platform-services)
@@ -59,7 +59,6 @@ public class SdkCommon {
         try (InputStream is = SdkCommon.class.getResourceAsStream("/" + parentArtifactId + ".properties")) {
             buildProps.load(is);
             version = buildProps.getProperty("version", "unknown");
-            projectName = buildProps.getProperty("title", "unknown");
        } catch (Throwable t) {
             version = "unknown";
             projectName = "unknown";
