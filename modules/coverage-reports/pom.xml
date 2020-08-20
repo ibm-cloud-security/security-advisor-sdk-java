@@ -5,7 +5,7 @@
         <!-- >>> Update this to reflect your parent project's artifact id -->
         <artifactId>securityadvisor</artifactId>
         <groupId>com.ibm.cloud</groupId>
-         <version>== <version> == 1.0.2</version>
+         <version>== 1.0.2</version>
         <relativePath>../..</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -17,7 +17,7 @@
     <name>Security Advisor Coverage Reports</name>
 
     <dependencies>
-        <!-- 
+        <!--
             There should be a dependency for EACH module in the project.
             Add new "dependency" entries here as needed when you add modules to your parent pom.xml.
             This will ensure that an aggregate code coverage report contains information for all of your modules.
