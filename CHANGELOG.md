@@ -1,3 +1,14 @@
+# [1.1.0](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.0.2...1.1.0) (2020-08-20)
+
+
+### Features
+
+* **sdk-metrics:** Add User-Agent for sdk metrics instrumentation ([c0aa7dd](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/c0aa7ddeb1e51d6a1b80a97bce856dd17c4de376))
+* **sdk-metrics:** Add User-Agent for sdk metrics instrumentation ([37a51be](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/37a51bef748b4a6afe9e140cc2447a728fe9a07c))
+* **sdk-metrics:** Add User-Agent for sdk metrics instrumentation ([12d557a](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/12d557a0d9afa268744512145b8ec8aa8ae71bfa))
+* **sdk-metrics:** Fix build for ut coverage ([9042ddf](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/9042ddfe00da80cc11831d64cb8437801f34846e))
+* **sdk-metrics:** Fix build for ut coverage ([8955fe9](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/8955fe91f14e7eb793ad2917d5ba7801d562d818))
+
 ## [1.0.2](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.0.1...1.0.2) (2020-08-13)
 
 
