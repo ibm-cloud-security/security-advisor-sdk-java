@@ -6,7 +6,7 @@
         <!-- >>> Replace this with the parent pom's artifactId -->
         <artifactId>securityadvisor</artifactId>
         <groupId>com.ibm.cloud</groupId>
-        <version> == 1.1.2</version>
+        <version>1.1.4</version>
         <relativePath>../..</relativePath>
     </parent>
 
