@@ -1,3 +1,11 @@
+## [1.1.2](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.1.1...1.1.2) (2020-08-26)
+
+
+### Bug Fixes
+
+* **release:** build new release with sev changes ([afa990e](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/afa990ea4b7944444a5271ee2e24ce007b825a96))
+* **release:** build new release with sev changes ([cdedb33](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/cdedb33a2f0a33546b99a7c180697a0fcd6ed118))
+
 ## [1.1.1](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.1.0...1.1.1) (2020-08-20)
 
 
