@@ -1,3 +1,20 @@
+## [1.1.5](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.1.4...1.1.5) (2020-08-26)
+
+
+### Bug Fixes
+
+* **fixbuilds:** release jars ([3c0f7ef](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/3c0f7ef0867c744565e13842219b4e88f3c636fb))
+* **fixjars:** release jars ([264ed56](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/264ed569687a382e2911953f22d469c74a16924e))
+* **fixjars:** release jars ([4fec8dd](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/4fec8dd46f64b5cb26828e2b902166edd549d478))
+* **releasejars:** release jars ([1a800c8](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/1a800c8770524bd502e65e93a427c60a70255e37))
+* **releasejars:** release jars ([4d0c73c](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/4d0c73c7be6ac4b5274b615bde2e108aba055445))
+* **releasejars:** release jars ([f822b42](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/f822b422a593f3f50fdbe57e4d46a651270679f3))
+* **releasejars:** release jars ([3582926](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/3582926aaf11848e3a84ad1bf559f22e3275fd9b))
+* **releasejars:** release jars ([2c87dc5](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/2c87dc5a75657a21640409823ee01688f3141ac0))
+* **releasejars:** release jars ([04ff5e7](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/04ff5e7eda26c1499cc89d0f6d84f636cbda79ed))
+* **releasejars:** release jars ([7b2d8b4](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/7b2d8b4b4737ded729da2e29cbc303cfe81e9fb4))
+* **releasejars:** release jars ([ed97079](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/ed9707902871cd3bca9920ca6a369be903763a69))
+
 ## [1.1.4](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.1.3...1.1.4) (2020-08-26)
 
 
