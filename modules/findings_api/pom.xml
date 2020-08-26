@@ -6,7 +6,7 @@
     <parent>
         <artifactId>securityadvisor</artifactId>
         <groupId>com.ibm.cloud</groupId>
-        <version> == 1.1.4</version>
+        <version>1.1.4</version>
         <relativePath>../..</relativePath>
     </parent>
 
