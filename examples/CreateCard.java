@@ -18,7 +18,6 @@ public class CreateCard {
     private CreateCard() { }
 
     public static void main(String[] args) {
-        System.out.println("Create card example    ");
         
         Authenticator authenticator = new IamAuthenticator("<apiKey>");
 
