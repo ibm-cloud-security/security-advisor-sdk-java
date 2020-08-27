@@ -1,3 +1,12 @@
+## [1.1.6](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.1.5...1.1.6) (2020-08-27)
+
+
+### Bug Fixes
+
+* **assets:** assets path format ([5c04123](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/5c04123166d6b3b3d8f92b2fb6034fedd66dd111))
+* **assets:** fix asset path format ([da6fb6d](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/da6fb6d01e7e563d7de01ba6e242dc786dcc3662))
+* **assets:** fix asset path format ([88040c0](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/88040c0a6f16fd60902758c4acd4b7211fa42ceb))
+
 ## [1.1.5](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.1.4...1.1.5) (2020-08-26)
 
 
