@@ -1,3 +1,12 @@
+## [1.1.7](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.1.6...1.1.7) (2020-09-09)
+
+
+### Bug Fixes
+
+* **readme:** Updated readme to add authentication section ([5e68b86](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/5e68b8644f51fc8dc53910106d79a4212305a165))
+* **readme:** Updated readme to add authentication section ([9d3edb1](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/9d3edb1f207d5200f31aecbd13f4f9f0a89d6ea7))
+* **readme:** Updated readme to add authentication section ([7bd3f48](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/7bd3f48ac437f2a28897f4c72fe5b43cc7e7fe33))
+
 ## [1.1.6](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.1.5...1.1.6) (2020-08-27)
 
 
