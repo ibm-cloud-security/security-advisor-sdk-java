@@ -21,15 +21,22 @@ Changes might occur which impact applications that use this SDK.
 
 <!-- toc -->
 
-- [Overview](#overview)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Using the SDK](#using-the-sdk)
-- [Questions](#questions)
-- [Issues](#issues)
-- [Open source @ IBM](#open-source--ibm)
-- [Contributing](#contributing)
-- [License](#license)
+- [IBM Cloud Security Advisor Java SDK Version 1.1.6](#ibm-cloud-security-advisor-java-sdk-version-116)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+        - [Maven](#maven)
+        - [Gradle](#gradle)
+  - [Authentication](#authentication)
+    - [Authenticating using the IAM API key:](#authenticating-using-the-iam-api-key)
+    - [Authenticating using the IAM Token:](#authenticating-using-the-iam-token)
+  - [Using the SDK](#using-the-sdk)
+  - [Questions](#questions)
+  - [Issues](#issues)
+  - [Open source @ IBM](#open-source--ibm)
+  - [Contributing](#contributing)
+  - [License](#license)
 
 <!-- tocstop -->
 
@@ -72,6 +79,46 @@ artifact coordinates (group id, artifact id and version) for the service, like t
 ```gradle
 'com.ibm.cloud:securityadvisor:1.1.6'
 ```
+
+## Authentication
+IBM Cloud Security Advisor uses token-based [Identity and Access Management (IAM) authentication](https://cloud.ibm.com/docs/iam?topic=iam-getstarted).
+
+IAM authentication uses a service API key to get an access token that is passed with the call. Access tokens are valid for a limited amount of time and must be regenerated.
+
+To provide credentials to the SDK, you supply either an IAM service **API key** or an **access token**:
+
+- Use the API key to have the SDK manage the lifecycle of the access token. The SDK requests an access token, ensures that the access token is valid, and refreshes it if necessary.
+- Use the access token if you want to manage the lifecycle yourself. For details, check `Authenticating using the IAM Token` section.
+
+### Authenticating using the IAM API key:
+
+```java
+import com.ibm.cloud.sdk.core.security.IamAuthenticator;
+import com.ibm.cloud.securityadvisor.notifications_api.v1.NotificationsApi;
+import com.ibm.cloud.securityadvisor.findings_api.v1.FindingsApi;
+
+IamAuthenticator authenticator = new IamAuthenticator("<apiKey>");
+NotificationsApi notificationsApi = new NotificationsApi("notifications_api", authenticator); //Initialize notifications service
+FindingsApi findingsApi = new FindingsApi("findings_api", authenticator); //Initialize findings service
+```
+
+### Authenticating using the IAM Token:
+
+```java
+import com.ibm.cloud.sdk.core.security.IamAuthenticator;
+import com.ibm.cloud.sdk.core.security.BearerTokenAuthenticator;
+import com.ibm.cloud.securityadvisor.notifications_api.v1.NotificationsApi;
+import com.ibm.cloud.securityadvisor.findings_api.v1.FindingsApi;
+
+IamAuthenticator authenticator = new IamAuthenticator("<apiKey>");
+IamToken iamToken = authenticator.requestToken(); //Generating the token
+String token = iamToken.getAccessToken(); // Getting the token
+
+BearerTokenAuthenticator bearerAuth = new BearerTokenAuthenticator(token); // initialize BearerTokenAuthenticator
+NotificationsApi notificationsApi = new NotificationsApi("notifications_api", bearerAuth);//Initialize notifications service
+FindingsApi findingsApi = new FindingsApi("findings_api", bearerAuth); //Initialize findings service
+```
+
 
 ## Using the SDK
 For general SDK usage information, please see [this link](https://github.com/IBM/ibm-cloud-sdk-common/blob/master/README.md)
