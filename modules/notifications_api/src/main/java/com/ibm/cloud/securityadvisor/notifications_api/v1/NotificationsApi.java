@@ -150,7 +150,7 @@ public class NotificationsApi extends BaseService {
       contentJson.addProperty("enabled", createNotificationChannelOptions.enabled());
     }
     if (createNotificationChannelOptions.alertSource() != null) {
-      contentJson.add("alertSource", com.ibm.cloud.sdk.core.util.GsonSingleton.getGson().toJsonTree(createNotificationChannelOptions.alertSource()));
+      contentJson.add("alert_source", com.ibm.cloud.sdk.core.util.GsonSingleton.getGson().toJsonTree(createNotificationChannelOptions.alertSource()));
     }
     builder.bodyJson(contentJson);
     ResponseConverter<CreateChannelsResponse> responseConverter =
@@ -266,7 +266,7 @@ public class NotificationsApi extends BaseService {
       contentJson.addProperty("enabled", updateNotificationChannelOptions.enabled());
     }
     if (updateNotificationChannelOptions.alertSource() != null) {
-      contentJson.add("alertSource", com.ibm.cloud.sdk.core.util.GsonSingleton.getGson().toJsonTree(updateNotificationChannelOptions.alertSource()));
+      contentJson.add("alert_source", com.ibm.cloud.sdk.core.util.GsonSingleton.getGson().toJsonTree(updateNotificationChannelOptions.alertSource()));
     }
     builder.bodyJson(contentJson);
     ResponseConverter<UpdateChannelResponse> responseConverter =

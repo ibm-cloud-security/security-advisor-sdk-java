@@ -22,6 +22,7 @@ public class CreateChannelsResponse extends GenericModel {
 
   @SerializedName("channel_id")
   protected String channelId;
+  @SerializedName("status_code")
   protected Long statusCode;
 
   /**
