@@ -22,6 +22,7 @@ public class UpdateChannelResponse extends GenericModel {
 
   @SerializedName("channel_id")
   protected String channelId;
+  @SerializedName("status_code")
   protected Long statusCode;
 
   /**
@@ -43,6 +44,7 @@ public class UpdateChannelResponse extends GenericModel {
    * @return the statusCode
    */
   public Long getStatusCode() {
+    System.out.println(statusCode);
     return statusCode;
   }
 }

@@ -40,6 +40,7 @@ public class NotificationsApiIntegrationTest extends PowerMockTestCase {
     public String ApiUrl = System.getenv("NOTIFICATIONS_API_URL");
     public Authenticator authenticator = new IamAuthenticator(ApiKey, IamUrl, null, null, true, null);
     public NotificationsApi notificationsApi = new NotificationsApi("notifications_api", authenticator);
+    String channelId;
 
     @Test
     public void testListChannels() throws Throwable {
@@ -58,8 +59,8 @@ public class NotificationsApiIntegrationTest extends PowerMockTestCase {
             notificationsApi.setServiceUrl(ApiUrl);
 
             NotificationChannelAlertSourceItem notificationChannelAlertSourceItemModel = new NotificationChannelAlertSourceItem.Builder()
-                    .providerName("testString")
-                    .findingTypes(new java.util.ArrayList<String>(java.util.Arrays.asList("testString"))).build();
+                    .providerName("CERT")
+                    .findingTypes(new java.util.ArrayList<String>(java.util.Arrays.asList("ALL"))).build();
 
             CreateNotificationChannelOptions createNotificationChannelOptionsModel = new CreateNotificationChannelOptions.Builder()
                     .accountId(AccountId).name("testString").type("Webhook").endpoint("https://cloud.ibm.com")
@@ -70,9 +71,66 @@ public class NotificationsApiIntegrationTest extends PowerMockTestCase {
 
             Response<CreateChannelsResponse> resp = notificationsApi
                     .createNotificationChannel(createNotificationChannelOptionsModel).execute();
+            channelId = resp.getResult().getChannelId();
             assertNotNull(resp);
             assertEquals(resp.getStatusCode(), 200);
         } catch (NotFoundException e) {
+        } finally {
+        }
+    }
+
+    @Test
+    public void testUpdateChannel() throws Throwable {
+        try {
+            notificationsApi.setServiceUrl(ApiUrl);
+
+            NotificationChannelAlertSourceItem notificationChannelAlertSourceItemModel = new NotificationChannelAlertSourceItem.Builder()
+                    .providerName("ATA")
+                    .findingTypes(new java.util.ArrayList<String>(java.util.Arrays.asList("ALL"))).build();
+
+            UpdateNotificationChannelOptions opts = new UpdateNotificationChannelOptions.Builder().accountId(AccountId)
+                    .name("testString").type("Webhook").endpoint("https://cloud.ibm.com").description("testString")
+                    .severity(new java.util.ArrayList<String>(java.util.Arrays.asList("low"))).enabled(true)
+                    .alertSource(new java.util.ArrayList<NotificationChannelAlertSourceItem>(
+                            java.util.Arrays.asList(notificationChannelAlertSourceItemModel)))
+                    .channelId(channelId).build();
+
+            Response<UpdateChannelResponse> resp = notificationsApi.updateNotificationChannel(opts).execute();
+            assertNotNull(resp);
+            assertEquals(resp.getStatusCode(), 200);
+        } catch (NotFoundException e) {
+        } finally {
+        }
+    }
+
+    @Test
+    public void testGetChannel() throws Throwable {
+        try {
+            notificationsApi.setServiceUrl(ApiUrl);
+
+            GetNotificationChannelOptions opts = new GetNotificationChannelOptions.Builder().accountId(AccountId)
+                    .channelId(channelId).build();
+
+            Response<GetChannelResponse> resp = notificationsApi.getNotificationChannel(opts).execute();
+            assertNotNull(resp);
+            assertEquals(resp.getStatusCode(), 200);
+        } catch (NotFoundException e) {
+        } finally {
+        }
+    }
+
+    @Test
+    public void testTestChannel() throws Throwable {
+        try {
+            notificationsApi.setServiceUrl(ApiUrl);
+
+            TestNotificationChannelOptions opts = new TestNotificationChannelOptions.Builder().accountId(AccountId)
+                    .channelId(channelId).build();
+
+            Response<TestChannelResponse> resp = notificationsApi.testNotificationChannel(opts).execute();
+            assertNotNull(resp);
+            assertEquals(resp.getStatusCode(), 200);
+        } catch (InternalServerErrorException e) {
         } finally {
         }
     }
@@ -83,7 +141,7 @@ public class NotificationsApiIntegrationTest extends PowerMockTestCase {
             notificationsApi.setServiceUrl(ApiUrl);
 
             List<String> channelsList = new ArrayList<String>();
-            channelsList.add("testString");
+            channelsList.add(channelId);
 
             DeleteNotificationChannelsOptions opts = new DeleteNotificationChannelsOptions.Builder()
                     .accountId(AccountId).body(channelsList).build();
@@ -107,63 +165,7 @@ public class NotificationsApiIntegrationTest extends PowerMockTestCase {
             Response<DeleteChannelResponse> resp = notificationsApi.deleteNotificationChannel(opts).execute();
             assertNotNull(resp);
             assertEquals(resp.getStatusCode(), 200);
-        } catch (InternalServerErrorException e) {
-        } finally {
-        }
-    }
-
-    @Test
-    public void testGetChannel() throws Throwable {
-        try {
-            notificationsApi.setServiceUrl(ApiUrl);
-
-            GetNotificationChannelOptions opts = new GetNotificationChannelOptions.Builder().accountId(AccountId)
-                    .channelId("koi-bhi-channel").build();
-
-            Response<GetChannelResponse> resp = notificationsApi.getNotificationChannel(opts).execute();
-            assertNotNull(resp);
-            assertEquals(resp.getStatusCode(), 200);
-        } catch (InternalServerErrorException e) {
-        } finally {
-        }
-    }
-
-    @Test
-    public void testUpdateChannel() throws Throwable {
-        try {
-            notificationsApi.setServiceUrl(ApiUrl);
-
-            NotificationChannelAlertSourceItem notificationChannelAlertSourceItemModel = new NotificationChannelAlertSourceItem.Builder()
-                    .providerName("testString")
-                    .findingTypes(new java.util.ArrayList<String>(java.util.Arrays.asList("testString"))).build();
-
-            UpdateNotificationChannelOptions opts = new UpdateNotificationChannelOptions.Builder().accountId(AccountId)
-                    .name("testString").type("Webhook").endpoint("https://cloud.ibm.com").description("testString")
-                    .severity(new java.util.ArrayList<String>(java.util.Arrays.asList("low"))).enabled(true)
-                    .alertSource(new java.util.ArrayList<NotificationChannelAlertSourceItem>(
-                            java.util.Arrays.asList(notificationChannelAlertSourceItemModel)))
-                    .channelId("koi-bhi-channel").build();
-
-            Response<UpdateChannelResponse> resp = notificationsApi.updateNotificationChannel(opts).execute();
-            assertNotNull(resp);
-            assertEquals(resp.getStatusCode(), 200);
-        } catch (InternalServerErrorException e) {
-        } finally {
-        }
-    }
-
-    @Test
-    public void testTestChannel() throws Throwable {
-        try {
-            notificationsApi.setServiceUrl(ApiUrl);
-
-            TestNotificationChannelOptions opts = new TestNotificationChannelOptions.Builder().accountId(AccountId)
-                    .channelId("koi-bhi-channel").build();
-
-            Response<TestChannelResponse> resp = notificationsApi.testNotificationChannel(opts).execute();
-            assertNotNull(resp);
-            assertEquals(resp.getStatusCode(), 200);
-        } catch (InternalServerErrorException e) {
+        } catch (InternalServerErrorException | NotFoundException e) {
         } finally {
         }
     }
