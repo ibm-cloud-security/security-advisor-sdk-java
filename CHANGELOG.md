@@ -1,3 +1,10 @@
+## [1.1.8](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.1.7...1.1.8) (2021-03-31)
+
+
+### Bug Fixes
+
+* **openapi:** fix openapi validation errors ([6f66812](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/6f6681268c4028b7ba0b560acc2d8d9237773fc4))
+
 ## [1.1.7](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.1.6...1.1.7) (2020-09-09)
 
 
