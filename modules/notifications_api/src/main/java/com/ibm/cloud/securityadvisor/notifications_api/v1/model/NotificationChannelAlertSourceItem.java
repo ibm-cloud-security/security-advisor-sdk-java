@@ -154,12 +154,6 @@ public class NotificationChannelAlertSourceItem extends GenericModel {
    * | ATA | "appid", "cos", "iks", "iam", "kms", "cert", "account", "app"|
    * | CERT | "expired_cert", "expiring_1day_cert", "expiring_10day_cert", "expiring_30day_cert", "expiring_60day_cert",
    * "expiring_90day_cert"|
-   * | config-advisor | "appprotection-dns_not_proxied", "appprotection-dnssec_off", "appprotection-ssl_not_strict",
-   * "appprotection-tls_min_version", "appprotection-waf_off", "appprotection-waf_rules", "calico-deny_all_rule",
-   * "calico-nonstandard_ports", "calico-update_cis_whitelist", "datacos-cos_managers", "datacos-not_encrypted_via_kp",
-   * "datacos-not_in_private_network", "datacos-public_bucket_acl", "datacos-public_bucket_iam",
-   * "datacos-public_object_acl", "iam-account_admins", "iam-all_resource_managers", "iam-all_resource_readers",
-   * "iam-identity_admins", "iam-kms_managers", "iam-out_of_group"|
    * | ALL | "ALL"|.
    *
    * @return the findingTypes

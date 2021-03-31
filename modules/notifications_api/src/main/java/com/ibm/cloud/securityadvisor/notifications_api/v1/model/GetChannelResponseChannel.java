@@ -38,6 +38,7 @@ public class GetChannelResponseChannel extends GenericModel {
   protected GetChannelResponseChannelSeverity severity;
   protected String endpoint;
   protected Boolean enabled;
+  @SerializedName("alert_source")
   protected List<GetChannelResponseChannelAlertSourceItem> alertSource;
   protected String frequency;
 

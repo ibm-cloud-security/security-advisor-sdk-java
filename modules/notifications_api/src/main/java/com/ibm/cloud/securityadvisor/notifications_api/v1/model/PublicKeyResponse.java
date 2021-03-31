@@ -11,14 +11,14 @@
  * specific language governing permissions and limitations under the License.
  */
 package com.ibm.cloud.securityadvisor.notifications_api.v1.model;
-
+import com.google.gson.annotations.SerializedName;
 import com.ibm.cloud.sdk.core.service.model.GenericModel;
 
 /**
  * PublicKeyResponse.
  */
 public class PublicKeyResponse extends GenericModel {
-
+  @SerializedName("public_key")
   protected String publicKey;
 
   /**
