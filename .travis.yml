@@ -60,7 +60,7 @@ jobs:
 
 deploy:
   provider: pages
-  cleanup: true
+  skip_cleanup: true
   strategy: git
   token: $GH_TOKEN
   keep_history: false
