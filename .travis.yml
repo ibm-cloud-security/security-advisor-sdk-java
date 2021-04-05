@@ -27,6 +27,8 @@ stages:
 before_install:
   - sudo apt-get update
   - env | grep TRAVIS
+  - echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import
+  - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
 
 jobs:
   include:
@@ -46,17 +48,6 @@ jobs:
       after_success:
         - echo "Semantic release has successfully created a new tagged-release"
 
-    - stage: Publish-Release
-      jdk: openjdk8
-      name: Publish-Javadoc
-      install: true
-      script:
-        - sh build/setMavenVersion.sh
-        - mvn clean javadoc:aggregate $MVN_ARGS
-        - sh build/publishJavadoc.sh
-      after_success:
-        - echo "Javadocs successfully published to gh-pages!"
-
     - jdk: openjdk8
       name: Publish-To-Maven-Central
       install: true
@@ -66,3 +57,10 @@ jobs:
         - mvn deploy $MVN_ARGS -DskipTests -P central
       after_success:
         - echo "Maven artifacts successfully published to Maven Central!"
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GH_TOKEN
+  keep_history: true
+  local_dir: target/site/apidocs
