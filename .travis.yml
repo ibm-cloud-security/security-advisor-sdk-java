@@ -1,42 +1,70 @@
 ---
 language: java
+
 dist: xenial
+
 os: linux
+
 jdk:
 - openjdk8
 branches:
   except:
   - gh-pages
+
 cache:
   directories:
   - "$HOME/.m2"
-before_install:
-- sudo apt-get update
-- sudo apt-get install python
-- nvm install 12
-- npm install -g npm@6.x
-install: true
-script:
-- mvn clean deploy -P central
-- mvn clean package
-before_deploy:
-- pip install --user bump2version
-- npm install @semantic-release/changelog
-- npm install @semantic-release/exec
-- npm install @semantic-release/git
-- npm install @semantic-release/github
-deploy:
-  - provider: script
-    script: npx semantic-release
-    skip_cleanup: true
-    on:
-      branch: master
-  - provider: pages
-    skip_cleanup: true
-    github_token: $GH_TOKEN
-    verbose: true
-    github_url: github.ibm.com
-    local_dir: target/site/apidocs
-    on:
-      branch: master
 
+env:
+  global:
+    - MVN_ARGS="--settings build/.travis.settings.xml"
+
+stages:
+  - name: Build-Test
+  - name: Semantic-Release
+    if: branch = main AND type = push AND fork = false
+  - name: Publish-Release
+    if: tag IS present
+
+before_install:
+  - sudo apt-get update
+  - env | grep TRAVIS
+
+jobs:
+  include:
+    - stage: Semantic-Release
+      install:
+        - sudo apt-get update
+        - sudo apt-get install python
+        - nvm install 12
+        - npm install -g npm@6.x
+        - pip install --user bump2version
+        - npm install @semantic-release/changelog
+        - npm install @semantic-release/exec
+        - npm install @semantic-release/git
+        - npm install @semantic-release/github
+      script:
+        - npx semantic-release
+      after_success:
+        - echo "Semantic release has successfully created a new tagged-release"
+
+    - stage: Publish-Release
+      jdk: openjdk8
+      name: Publish-Javadoc
+      install: true
+      script:
+        - build/setMavenVersion.sh
+        - mvn clean javadoc:aggregate $MVN_ARGS
+        - build/publishJavadoc.sh
+      after_success:
+        - echo "Javadocs successfully published to gh-pages!"
+
+    - jdk: openjdk8
+      name: Publish-To-Maven-Central
+      install: true
+      script:
+        - build/setupSigning.sh
+        - build/setMavenVersion.sh
+        - mvn deploy $MVN_ARGS -DskipTests -P central
+      after_success:
+        - echo "Maven artifacts successfully published to Maven Central!"
