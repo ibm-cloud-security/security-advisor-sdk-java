@@ -29,6 +29,7 @@ before_install:
   - env | grep TRAVIS
   - echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import
   - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
+  - mvn clean package
 
 jobs:
   include:
@@ -52,8 +53,6 @@ jobs:
       name: Publish-To-Maven-Central
       install: true
       script:
-        - sh build/setupSigning.sh
-        - sh build/setMavenVersion.sh
         - mvn deploy $MVN_ARGS -DskipTests -P central
       after_success:
         - echo "Maven artifacts successfully published to Maven Central!"
