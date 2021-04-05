@@ -40,7 +40,7 @@ public class NotificationsApiIntegrationTest extends PowerMockTestCase {
     public String ApiUrl = System.getenv("NOTIFICATIONS_API_URL");
     public Authenticator authenticator = new IamAuthenticator(ApiKey, IamUrl, null, null, true, null);
     public NotificationsApi notificationsApi = new NotificationsApi("notifications_api", authenticator);
-    String channelId;
+    String channelId = System.getenv("channelID");
 
     @Test
     public void testListChannels() throws Throwable {

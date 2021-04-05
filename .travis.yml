@@ -33,7 +33,7 @@ before_install:
 
 jobs:
   include:
-    - stage: Semantic-Release
+    - stage: Semantic Release
       install:
         - sudo apt-get update
         - sudo apt-get install python
@@ -49,7 +49,8 @@ jobs:
       after_success:
         - echo "Semantic release has successfully created a new tagged-release"
 
-    - jdk: openjdk8
+    - stage: Maven Central Deployment
+      jdk: openjdk8
       name: Publish-To-Maven-Central
       install: true
       script:
@@ -59,7 +60,8 @@ jobs:
 
 deploy:
   provider: pages
-  skip_cleanup: true
-  github_token: $GH_TOKEN
-  keep_history: true
+  cleanup: false
+  strategy: git
+  token: $GH_TOKEN
+  keep_history: false
   local_dir: target/site/apidocs
