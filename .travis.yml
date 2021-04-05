@@ -57,6 +57,7 @@ jobs:
     - stage: JavaDoc Publish
       deploy:
         provider: pages
+        script: mvn install $MVN_ARGS -DskipTests
         skip_cleanup: true
         strategy: git
         token: $GH_TOKEN
