@@ -20,20 +20,27 @@ env:
     - MVN_ARGS="--settings build/.travis.settings.xml"
 
 stages:
-  - name: Build-Test
-  - name: Semantic-Release
-  - name: Publish-Release
+  - name: Build
+  - name: Semantic Release
+    # if: branch = main AND type = push AND fork = false
+  - name: JavaDoc Publish
+  - name: Maven Central Deployment
+    # if: branch = main AND type = push AND fork = false
+
 
 before_install:
   - sudo apt-get update
   - env | grep TRAVIS
   - echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import
   - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
-  - mvn clean package
 
 jobs:
   include:
+    - stage: Build
+      script: mvn clean package $MVN_ARGS
+
     - stage: Semantic Release
+      name: Semantic Release
       install:
         - sudo apt-get update
         - sudo apt-get install python
@@ -46,22 +53,18 @@ jobs:
         - npm install @semantic-release/github
       script:
         - npx semantic-release
-      after_success:
-        - echo "Semantic release has successfully created a new tagged-release"
+
+    - stage: JavaDoc Publish
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        strategy: git
+        token: $GH_TOKEN
+        keep_history: false
+        local_dir: target/site/apidocs
 
     - stage: Maven Central Deployment
+      name: Maven Central Deployment
       jdk: openjdk8
-      name: Publish-To-Maven-Central
-      install: true
       script:
         - mvn deploy $MVN_ARGS -DskipTests -P central
-      after_success:
-        - echo "Maven artifacts successfully published to Maven Central!"
-
-deploy:
-  provider: pages
-  skip_cleanup: true
-  strategy: git
-  token: $GH_TOKEN
-  keep_history: false
-  local_dir: target/site/apidocs
