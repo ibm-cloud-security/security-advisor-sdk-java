@@ -17,7 +17,8 @@ before_install:
 - npm install -g npm@6.x
 install: true
 script:
--  mvn clean package
+- mvn clean deploy -P central
+- mvn clean package
 before_deploy:
 - pip install --user bump2version
 - npm install @semantic-release/changelog
@@ -30,3 +31,12 @@ deploy:
     skip_cleanup: true
     on:
       branch: master
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GH_TOKEN
+    verbose: true
+    github_url: github.ibm.com
+    local_dir: target/site/apidocs
+    on:
+      branch: master
+
