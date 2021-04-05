@@ -51,9 +51,9 @@ jobs:
       name: Publish-Javadoc
       install: true
       script:
-        - build/setMavenVersion.sh
+        - sh build/setMavenVersion.sh
         - mvn clean javadoc:aggregate $MVN_ARGS
-        - build/publishJavadoc.sh
+        - sh build/publishJavadoc.sh
       after_success:
         - echo "Javadocs successfully published to gh-pages!"
 
@@ -61,8 +61,8 @@ jobs:
       name: Publish-To-Maven-Central
       install: true
       script:
-        - build/setupSigning.sh
-        - build/setMavenVersion.sh
+        - sh build/setupSigning.sh
+        - sh build/setMavenVersion.sh
         - mvn deploy $MVN_ARGS -DskipTests -P central
       after_success:
         - echo "Maven artifacts successfully published to Maven Central!"
