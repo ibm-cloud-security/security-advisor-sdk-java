@@ -57,11 +57,9 @@ jobs:
     - stage: JavaDoc Publish
       deploy:
         provider: pages
-        script: mvn install $MVN_ARGS -DskipTests
+        script: mvn install -DskipTests
         skip_cleanup: true
-        strategy: git
         token: $GH_TOKEN
-        keep_history: false
         local_dir: target/site/apidocs
 
     - stage: Maven Central Deployment
