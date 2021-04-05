@@ -27,7 +27,6 @@ stages:
   - name: Maven Central Deployment
     # if: branch = main AND type = push AND fork = false
 
-
 before_install:
   - sudo apt-get update
   - env | grep TRAVIS
@@ -54,16 +53,15 @@ jobs:
       script:
         - npx semantic-release
 
-    - stage: JavaDoc Publish
-      deploy:
-        provider: pages
-        script: mvn install -DskipTests
-        skip_cleanup: true
-        token: $GH_TOKEN
-        local_dir: target/site/apidocs
-
     - stage: Maven Central Deployment
       name: Maven Central Deployment
       jdk: openjdk8
       script:
         - mvn deploy $MVN_ARGS -DskipTests -P central
+
+deploy:
+  provider: pages
+  script: mvn install -DskipTests
+  skip_cleanup: true
+  token: $GH_TOKEN
+  local_dir: target/site/apidocs
