@@ -23,7 +23,6 @@ stages:
   - name: Build
   - name: Semantic Release
     # if: branch = main AND type = push AND fork = false
-  - name: JavaDoc Publish
   - name: Maven Central Deployment
     # if: branch = main AND type = push AND fork = false
 
@@ -37,6 +36,11 @@ jobs:
   include:
     - stage: Build
       script: mvn clean package $MVN_ARGS
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        token: $GH_TOKEN
+        local_dir: target/site/apidocs
 
     - stage: Semantic Release
       name: Semantic Release
@@ -58,10 +62,3 @@ jobs:
       jdk: openjdk8
       script:
         - mvn deploy $MVN_ARGS -DskipTests -P central
-
-deploy:
-  provider: pages
-  script: mvn install -DskipTests
-  skip_cleanup: true
-  token: $GH_TOKEN
-  local_dir: target/site/apidocs
