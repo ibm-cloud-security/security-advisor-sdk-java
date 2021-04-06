@@ -8,14 +8,14 @@
 <dependency>
   <groupId>com.ibm.cloud.securityadvisor</groupId>
   <artifactId>notifications_api</artifactId>
-  <version>1.1.8</version>
+  <version>1.2.0</version>
 </dependency>
 ```
 
 ##### Gradle
 
 ```gradle
-'com.ibm.cloud.securityadvisor:notifications_api:1.1.8'
+'com.ibm.cloud.securityadvisor:notifications_api:1.2.0'
 ```
 
 ## Usage
