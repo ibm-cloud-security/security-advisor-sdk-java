@@ -40,7 +40,7 @@ public class NotificationsApiIntegrationTest extends PowerMockTestCase {
     public String ApiUrl = System.getenv("NOTIFICATIONS_API_URL");
     public Authenticator authenticator = new IamAuthenticator(ApiKey, IamUrl, null, null, true, null);
     public NotificationsApi notificationsApi = new NotificationsApi("notifications_api", authenticator);
-    String channelId = System.getenv("channelID");
+    String channelId = "testString";
 
     @Test
     public void testListChannels() throws Throwable {
@@ -160,7 +160,7 @@ public class NotificationsApiIntegrationTest extends PowerMockTestCase {
             notificationsApi.setServiceUrl(ApiUrl);
 
             DeleteNotificationChannelOptions opts = new DeleteNotificationChannelOptions.Builder().accountId(AccountId)
-                    .channelId("koi-bhi-channel").build();
+                    .channelId("testString").build();
 
             Response<DeleteChannelResponse> resp = notificationsApi.deleteNotificationChannel(opts).execute();
             assertNotNull(resp);
