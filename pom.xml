@@ -431,6 +431,8 @@
 
     <profiles>
 
+        <!-- We deploy release on Maven Central under groupId com.ibm.cloud -->
+
         <!-- "central" is used to deploy artifacts on maven central -->
         <profile>
             <id>central</id>
