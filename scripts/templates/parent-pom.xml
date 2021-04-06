@@ -33,7 +33,6 @@
         <okhttp3-version>3.13.1</okhttp3-version>
         <surefire-version>3.0.0-M3</surefire-version>
         <jacoco-plugin-version>0.8.5</jacoco-plugin-version>
-        <bintray-plugin-version>1.5.20191113165555</bintray-plugin-version>
         <maven-deploy-plugin-version>3.0.0-M1</maven-deploy-plugin-version>
         <maven-source-plugin-version>3.1.0</maven-source-plugin-version>
         <maven-jar-plugin-version>3.2.0</maven-jar-plugin-version>
@@ -46,13 +45,6 @@
         <maven-buildnumber-plugin-version>1.4</maven-buildnumber-plugin-version>
         <powermock-version>2.0.5</powermock-version>
         <mockito-version>3.2.4</mockito-version>
-
-        <!-- Deployment-related properties -->
-        <bintray.org>ibm-cloud-sdks</bintray.org>
-        <!-- >>> Replace this with the name of your project's bintray repository -->
-        <bintray.repo>securityadvisor-java-sdk</bintray.repo>
-        <!-- >>> Replace this with your github repository's URL -->
-        <bintray.package.url>https://github.ibm.com/gauragos/securityadvisor-java-sdk</bintray.package.url>
     </properties>
 
     <modules>
@@ -95,17 +87,7 @@
             <id>na-artifactory-ibmcloud-sdks</id>
             <url>https://na.artifactory.swg-devops.com:443/artifactory/wcp-ibmcloud-sdks-team-maven-local/</url>
         </repository>
-
-        <repository>
-            <id>jcenter</id>
-            <url>https://jcenter.bintray.com/</url>
-        </repository>
     </repositories>
-
-    <!-- This section is commented out because we use an alternate deploy plugin. 
-    <distributionManagement>
-    </distributionManagement> 
-    -->
 
     <dependencyManagement>
         <dependencies>
@@ -169,11 +151,6 @@
     <build>
         <pluginManagement>
             <plugins>
-                <plugin>
-                    <groupId>com.carrotgarden.maven</groupId>
-                    <artifactId>bintray-maven-plugin</artifactId>
-                    <version>${bintray-plugin-version}</version>
-                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
@@ -338,47 +315,6 @@
                 <configuration>
                     <skip>true</skip>
                 </configuration>
-            </plugin>
-
-            <!-- Enable alternate bintray-maven-plugin -->
-            <plugin>
-                <groupId>com.carrotgarden.maven</groupId>
-                <artifactId>bintray-maven-plugin</artifactId>
-                <configuration>
-                    <skip>false</skip>
-
-                    <!-- Bintray oranization name. -->
-                    <subject>${bintray.org}</subject>
-
-                    <!-- Bintray target repository. -->
-                    <repository>${bintray.repo}</repository>
-
-                    <!-- Bintray credentials in settings.xml. -->
-                    <serverId>bintray</serverId>
-
-                    <!-- We'll use the maven coordinates for the bintray package name -->
-                    <bintrayPackage>${project.groupId}:${project.artifactId}</bintrayPackage>
-
-                    <!-- Use the project's github url when creating each module's package in the bintray repo -->
-                    <packageVcsUrl>${bintray.package.url}</packageVcsUrl>
-
-                    <performDestroy>false</performDestroy>
-                    <performCleanup>false</performCleanup>
-                    <performDeploy>true</performDeploy>
-                    <performEnsure>true</performEnsure>
-                    <retryFailedDeploymentCount>2</retryFailedDeploymentCount>
-                </configuration>
-                <executions>
-                    <!-- Activate "bintray:deploy" during "deploy" -->
-                    <execution>
-                        <?m2e ignore?>
-                        <id>bintray-deploy</id>
-                        <phase>deploy</phase>
-                        <goals>
-                            <goal>deploy</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
