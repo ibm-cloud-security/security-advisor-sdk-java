@@ -22,9 +22,9 @@ env:
 stages:
   - name: Build
   - name: Semantic Release
-    # if: branch = main AND type = push AND fork = false
+    if: branch = main AND type = push AND fork = false
   - name: Maven Central Deployment
-    # if: branch = main AND type = push AND fork = false
+    if: branch = main AND type = push AND fork = false
 
 before_install:
   - sudo apt-get update
