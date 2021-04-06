@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.2.2...1.2.3) (2021-04-06)
+
+
+### Bug Fixes
+
+* **'GPG':** Self signing process during release optimization ([0a3341d](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/0a3341dc68a71dff866766553fcfa4136dd23ffb))
+
 ## [1.2.2](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.2.1...1.2.2) (2021-04-06)
 
 
