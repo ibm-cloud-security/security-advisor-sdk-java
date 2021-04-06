@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.2.0...1.2.1) (2021-04-06)
+
+
+### Bug Fixes
+
+* **'semantic-release':** asset can not be read ([75cb01e](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/75cb01e0f7eda6185e6f6b4b4a8ed6700bae79fb))
+
 # [1.2.0](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.1.8...1.2.0) (2021-04-06)
 
 
