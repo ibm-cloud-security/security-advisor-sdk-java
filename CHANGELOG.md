@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.2.1...1.2.2) (2021-04-06)
+
+
+### Bug Fixes
+
+* **notifications-api:** fixed integration tests in notifications api ([f5da145](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/f5da14517a17221acf9c8d984009de77098528d4))
+
 ## [1.2.1](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.2.0...1.2.1) (2021-04-06)
 
 
