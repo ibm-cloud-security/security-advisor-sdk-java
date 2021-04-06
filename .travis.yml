@@ -1,32 +1,64 @@
 ---
 language: java
+
 dist: xenial
+
 os: linux
+
 jdk:
 - openjdk8
 branches:
   except:
   - gh-pages
+
 cache:
   directories:
   - "$HOME/.m2"
+
+env:
+  global:
+    - MVN_ARGS="--settings build/.travis.settings.xml"
+
+stages:
+  - name: Build
+  - name: Semantic Release
+    if: branch = main AND type = push AND fork = false
+  - name: Maven Central Deployment
+    if: branch = main AND type = push AND fork = false
+
 before_install:
-- sudo apt-get update
-- sudo apt-get install python
-- nvm install 12
-- npm install -g npm@6.x
-install: true
-script:
--  mvn clean package
-before_deploy:
-- pip install --user bump2version
-- npm install @semantic-release/changelog
-- npm install @semantic-release/exec
-- npm install @semantic-release/git
-- npm install @semantic-release/github
-deploy:
-  - provider: script
-    script: npx semantic-release
-    skip_cleanup: true
-    on:
-      branch: master
+  - sudo apt-get update
+  - env | grep TRAVIS
+  - echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import
+  - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
+
+jobs:
+  include:
+    - stage: Build
+      script: mvn clean package $MVN_ARGS
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        token: $GH_TOKEN
+        local_dir: target/site/apidocs
+
+    - stage: Semantic Release
+      name: Semantic Release
+      install:
+        - sudo apt-get update
+        - sudo apt-get install python
+        - nvm install 12
+        - npm install -g npm@6.x
+        - pip install --user bump2version
+        - npm install @semantic-release/changelog
+        - npm install @semantic-release/exec
+        - npm install @semantic-release/git
+        - npm install @semantic-release/github
+      script:
+        - npx semantic-release
+
+    - stage: Maven Central Deployment
+      name: Maven Central Deployment
+      jdk: openjdk8
+      script:
+        - mvn deploy $MVN_ARGS -DskipTests -P central
