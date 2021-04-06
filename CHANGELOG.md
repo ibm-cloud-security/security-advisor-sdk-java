@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.1.8...1.2.0) (2021-04-06)
+
+
+### Features
+
+* **'Maven Central Release':** First version to release SDK to Maven Central. ([8431a74](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/8431a74ad488e7f34bd6c4a677f62227c4dc0d24))
+
 ## [1.1.8](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.1.7...1.1.8) (2021-03-31)
 
 
