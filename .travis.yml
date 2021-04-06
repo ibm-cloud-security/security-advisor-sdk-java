@@ -55,7 +55,7 @@ jobs:
         - npm install @semantic-release/git
         - npm install @semantic-release/github
       script:
-        - npx semantic-release
+        - mvn clean package -DskipTests && npx semantic-release
 
     - stage: Maven Central Deployment
       name: Maven Central Deployment
