@@ -8,14 +8,14 @@
 <dependency>
   <groupId>com.ibm.cloud.securityadvisor</groupId>
   <artifactId>findings_api</artifactId>
-  <version>1.2.2</version>
+  <version>1.2.3</version>
 </dependency>
 ```
 
 ##### Gradle
 
 ```gradle
-'com.ibm.cloud.securityadvisor:findings_api:1.2.2'
+'com.ibm.cloud.securityadvisor:findings_api:1.2.3'
 ```
 
 ## Usage
