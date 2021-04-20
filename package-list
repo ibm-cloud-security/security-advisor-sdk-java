@@ -1,0 +1,5 @@
+com.ibm.cloud.securityadvisor.common
+com.ibm.cloud.securityadvisor.findings_api.v1
+com.ibm.cloud.securityadvisor.findings_api.v1.model
+com.ibm.cloud.securityadvisor.notifications_api.v1
+com.ibm.cloud.securityadvisor.notifications_api.v1.model
