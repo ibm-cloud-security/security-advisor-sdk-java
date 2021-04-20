@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2020.
+ * (C) Copyright IBM Corp. 2021.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -37,6 +37,8 @@ public class UpdateNotificationChannelOptions extends GenericModel {
     String MEDIUM = "medium";
     /** high. */
     String HIGH = "high";
+    /** critical. */
+    String CRITICAL = "critical";
   }
 
   protected String accountId;
@@ -48,6 +50,7 @@ public class UpdateNotificationChannelOptions extends GenericModel {
   protected List<String> severity;
   protected Boolean enabled;
   protected List<NotificationChannelAlertSourceItem> alertSource;
+  protected String transactionId;
 
   /**
    * Builder.
@@ -62,6 +65,7 @@ public class UpdateNotificationChannelOptions extends GenericModel {
     private List<String> severity;
     private Boolean enabled;
     private List<NotificationChannelAlertSourceItem> alertSource;
+    private String transactionId;
 
     private Builder(UpdateNotificationChannelOptions updateNotificationChannelOptions) {
       this.accountId = updateNotificationChannelOptions.accountId;
@@ -73,6 +77,7 @@ public class UpdateNotificationChannelOptions extends GenericModel {
       this.severity = updateNotificationChannelOptions.severity;
       this.enabled = updateNotificationChannelOptions.enabled;
       this.alertSource = updateNotificationChannelOptions.alertSource;
+      this.transactionId = updateNotificationChannelOptions.transactionId;
     }
 
     /**
@@ -239,6 +244,17 @@ public class UpdateNotificationChannelOptions extends GenericModel {
       this.alertSource = alertSource;
       return this;
     }
+
+    /**
+     * Set the transactionId.
+     *
+     * @param transactionId the transactionId
+     * @return the UpdateNotificationChannelOptions builder
+     */
+    public Builder transactionId(String transactionId) {
+      this.transactionId = transactionId;
+      return this;
+    }
   }
 
   protected UpdateNotificationChannelOptions(Builder builder) {
@@ -261,6 +277,7 @@ public class UpdateNotificationChannelOptions extends GenericModel {
     severity = builder.severity;
     enabled = builder.enabled;
     alertSource = builder.alertSource;
+    transactionId = builder.transactionId;
   }
 
   /**
@@ -365,6 +382,17 @@ public class UpdateNotificationChannelOptions extends GenericModel {
    */
   public List<NotificationChannelAlertSourceItem> alertSource() {
     return alertSource;
+  }
+
+  /**
+   * Gets the transactionId.
+   *
+   * The transaction id for the request in uuid v4 format.
+   *
+   * @return the transactionId
+   */
+  public String transactionId() {
+    return transactionId;
   }
 }
 

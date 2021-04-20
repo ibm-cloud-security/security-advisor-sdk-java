@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2020.
+ * (C) Copyright IBM Corp. 2021.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -14,28 +14,26 @@
 package com.ibm.cloud.securityadvisor.notifications_api.v1.model;
 
 import com.ibm.cloud.sdk.core.service.model.FileWithMetadata;
+import com.ibm.cloud.securityadvisor.notifications_api.v1.model.ChannelAlertSourceItem;
 import com.ibm.cloud.securityadvisor.notifications_api.v1.utils.TestUtilities;
 
 import java.io.InputStream;
-
 import java.util.HashMap;
 import java.util.List;
-
 import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 /**
- * Unit test class for the ChannelResponseDefinitionSeverity model.
+ * Unit test class for the ChannelAlertSourceItem model.
  */
-public class ChannelResponseDefinitionSeverityTest {
+public class ChannelAlertSourceItemTest {
   final HashMap<String, InputStream> mockStreamMap = TestUtilities.createMockStreamMap();
   final List<FileWithMetadata> mockListFileWithMetadata = TestUtilities.creatMockListFileWithMetadata();
 
   @Test
-  public void testChannelResponseDefinitionSeverity() throws Throwable {
-    ChannelResponseDefinitionSeverity channelResponseDefinitionSeverityModel = new ChannelResponseDefinitionSeverity();
-    assertNull(channelResponseDefinitionSeverityModel.isHigh());
-    assertNull(channelResponseDefinitionSeverityModel.isMedium());
-    assertNull(channelResponseDefinitionSeverityModel.isLow());
+  public void testChannelAlertSourceItem() throws Throwable {
+    ChannelAlertSourceItem channelAlertSourceItemModel = new ChannelAlertSourceItem();
+    assertNull(channelAlertSourceItemModel.getProviderName());
+    assertNull(channelAlertSourceItemModel.getFindingTypes());
   }
 }

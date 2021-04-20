@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2020.
+ * (C) Copyright IBM Corp. 2021.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -28,7 +28,7 @@ import com.ibm.cloud.sdk.core.util.GsonSingleton;
 import com.ibm.cloud.sdk.core.service.model.FileWithMetadata;
 
 /**
- *  A class used by the unit tests containing utility functions.
+ * A class used by the unit tests containing utility functions.
  */
 public class TestUtilities {
     public static Map<String, Object> createMockMap() {
@@ -39,7 +39,9 @@ public class TestUtilities {
 
     public static HashMap<String, InputStream> createMockStreamMap() {
         return new HashMap<String, InputStream>() {
-            { put("key1", createMockStream("This is a mock file.")); }
+            {
+                put("key1", createMockStream("This is a mock file."));
+            }
         };
     }
 
@@ -105,7 +107,7 @@ public class TestUtilities {
 
     public static List<FileWithMetadata> creatMockListFileWithMetadata() {
         List<FileWithMetadata> list = new ArrayList<FileWithMetadata>();
-        byte[] fileBytes = {(byte) 0xde, (byte) 0xad, (byte) 0xbe, (byte) 0xef};
+        byte[] fileBytes = { (byte) 0xde, (byte) 0xad, (byte) 0xbe, (byte) 0xef };
         InputStream inputStream = new ByteArrayInputStream(fileBytes);
         FileWithMetadata.Builder builder = new FileWithMetadata.Builder();
         builder.data(inputStream);

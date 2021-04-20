@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2020.
+ * (C) Copyright IBM Corp. 2021.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -15,45 +15,21 @@ package com.ibm.cloud.securityadvisor.notifications_api.v1.model;
 import com.ibm.cloud.sdk.core.service.model.GenericModel;
 
 /**
- * Severity of the notification.
+ * The returned response when a webhook is tested for a channel.
  */
-public class GetChannelResponseChannelSeverity extends GenericModel {
+public class TestChannel extends GenericModel {
 
-  protected Boolean high;
-  protected Boolean medium;
-  protected Boolean low;
+  protected String test;
 
   /**
-   * Gets the high.
+   * Gets the test.
    *
-   * High Severity.
+   * response status.
    *
-   * @return the high
+   * @return the test
    */
-  public Boolean isHigh() {
-    return high;
-  }
-
-  /**
-   * Gets the medium.
-   *
-   * Medium Severity.
-   *
-   * @return the medium
-   */
-  public Boolean isMedium() {
-    return medium;
-  }
-
-  /**
-   * Gets the low.
-   *
-   * Low Severity.
-   *
-   * @return the low
-   */
-  public Boolean isLow() {
-    return low;
+  public String getTest() {
+    return test;
   }
 }
 

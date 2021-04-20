@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2020.
+ * (C) Copyright IBM Corp. 2021.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -20,6 +20,7 @@ import com.ibm.cloud.sdk.core.service.model.GenericModel;
 public class ListAllChannelsOptions extends GenericModel {
 
   protected String accountId;
+  protected String transactionId;
   protected Long limit;
   protected Long skip;
 
@@ -28,11 +29,13 @@ public class ListAllChannelsOptions extends GenericModel {
    */
   public static class Builder {
     private String accountId;
+    private String transactionId;
     private Long limit;
     private Long skip;
 
     private Builder(ListAllChannelsOptions listAllChannelsOptions) {
       this.accountId = listAllChannelsOptions.accountId;
+      this.transactionId = listAllChannelsOptions.transactionId;
       this.limit = listAllChannelsOptions.limit;
       this.skip = listAllChannelsOptions.skip;
     }
@@ -73,6 +76,17 @@ public class ListAllChannelsOptions extends GenericModel {
     }
 
     /**
+     * Set the transactionId.
+     *
+     * @param transactionId the transactionId
+     * @return the ListAllChannelsOptions builder
+     */
+    public Builder transactionId(String transactionId) {
+      this.transactionId = transactionId;
+      return this;
+    }
+
+    /**
      * Set the limit.
      *
      * @param limit the limit
@@ -99,6 +113,7 @@ public class ListAllChannelsOptions extends GenericModel {
     com.ibm.cloud.sdk.core.util.Validator.notEmpty(builder.accountId,
       "accountId cannot be empty");
     accountId = builder.accountId;
+    transactionId = builder.transactionId;
     limit = builder.limit;
     skip = builder.skip;
   }
@@ -121,6 +136,17 @@ public class ListAllChannelsOptions extends GenericModel {
    */
   public String accountId() {
     return accountId;
+  }
+
+  /**
+   * Gets the transactionId.
+   *
+   * The transaction id for the request in uuid v4 format.
+   *
+   * @return the transactionId
+   */
+  public String transactionId() {
+    return transactionId;
   }
 
   /**

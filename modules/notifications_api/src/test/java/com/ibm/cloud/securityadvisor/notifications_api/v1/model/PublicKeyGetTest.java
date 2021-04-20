@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2020.
+ * (C) Copyright IBM Corp. 2021.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -14,27 +14,25 @@
 package com.ibm.cloud.securityadvisor.notifications_api.v1.model;
 
 import com.ibm.cloud.sdk.core.service.model.FileWithMetadata;
+import com.ibm.cloud.securityadvisor.notifications_api.v1.model.PublicKeyGet;
 import com.ibm.cloud.securityadvisor.notifications_api.v1.utils.TestUtilities;
 
 import java.io.InputStream;
-
 import java.util.HashMap;
 import java.util.List;
-
 import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 /**
- * Unit test class for the CreateChannelsResponse model.
+ * Unit test class for the PublicKeyGet model.
  */
-public class CreateChannelsResponseTest {
+public class PublicKeyGetTest {
   final HashMap<String, InputStream> mockStreamMap = TestUtilities.createMockStreamMap();
   final List<FileWithMetadata> mockListFileWithMetadata = TestUtilities.creatMockListFileWithMetadata();
 
   @Test
-  public void testCreateChannelsResponse() throws Throwable {
-    CreateChannelsResponse createChannelsResponseModel = new CreateChannelsResponse();
-    assertNull(createChannelsResponseModel.getChannelId());
-    assertNull(createChannelsResponseModel.getStatusCode());
+  public void testPublicKeyGet() throws Throwable {
+    PublicKeyGet publicKeyGetModel = new PublicKeyGet();
+    assertNull(publicKeyGetModel.getPublicKey());
   }
 }

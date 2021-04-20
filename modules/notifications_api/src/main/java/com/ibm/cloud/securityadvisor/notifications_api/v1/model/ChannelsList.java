@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2020.
+ * (C) Copyright IBM Corp. 2021.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -11,23 +11,25 @@
  * specific language governing permissions and limitations under the License.
  */
 package com.ibm.cloud.securityadvisor.notifications_api.v1.model;
-import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
+
 import com.ibm.cloud.sdk.core.service.model.GenericModel;
 
 /**
- * PublicKeyResponse.
+ * Available channels in your account are listed.
  */
-public class PublicKeyResponse extends GenericModel {
-  @SerializedName("public_key")
-  protected String publicKey;
+public class ChannelsList extends GenericModel {
+
+  protected List<Channel> channels;
 
   /**
-   * Gets the publicKey.
+   * Gets the channels.
    *
-   * @return the publicKey
+   * @return the channels
    */
-  public String getPublicKey() {
-    return publicKey;
+  public List<Channel> getChannels() {
+    return channels;
   }
 }
 

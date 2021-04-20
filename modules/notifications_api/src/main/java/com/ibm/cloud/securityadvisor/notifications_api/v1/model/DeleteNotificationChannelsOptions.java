@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2020.
+ * (C) Copyright IBM Corp. 2021.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -24,6 +24,7 @@ public class DeleteNotificationChannelsOptions extends GenericModel {
 
   protected String accountId;
   protected List<String> body;
+  protected String transactionId;
 
   /**
    * Builder.
@@ -31,10 +32,12 @@ public class DeleteNotificationChannelsOptions extends GenericModel {
   public static class Builder {
     private String accountId;
     private List<String> body;
+    private String transactionId;
 
     private Builder(DeleteNotificationChannelsOptions deleteNotificationChannelsOptions) {
       this.accountId = deleteNotificationChannelsOptions.accountId;
       this.body = deleteNotificationChannelsOptions.body;
+      this.transactionId = deleteNotificationChannelsOptions.transactionId;
     }
 
     /**
@@ -101,6 +104,17 @@ public class DeleteNotificationChannelsOptions extends GenericModel {
       this.body = body;
       return this;
     }
+
+    /**
+     * Set the transactionId.
+     *
+     * @param transactionId the transactionId
+     * @return the DeleteNotificationChannelsOptions builder
+     */
+    public Builder transactionId(String transactionId) {
+      this.transactionId = transactionId;
+      return this;
+    }
   }
 
   protected DeleteNotificationChannelsOptions(Builder builder) {
@@ -110,6 +124,7 @@ public class DeleteNotificationChannelsOptions extends GenericModel {
       "body cannot be null");
     accountId = builder.accountId;
     body = builder.body;
+    transactionId = builder.transactionId;
   }
 
   /**
@@ -141,6 +156,17 @@ public class DeleteNotificationChannelsOptions extends GenericModel {
    */
   public List<String> body() {
     return body;
+  }
+
+  /**
+   * Gets the transactionId.
+   *
+   * The transaction id for the request in uuid v4 format.
+   *
+   * @return the transactionId
+   */
+  public String transactionId() {
+    return transactionId;
   }
 }
 

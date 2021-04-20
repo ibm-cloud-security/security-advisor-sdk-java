@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2020.
+ * (C) Copyright IBM Corp. 2021.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -12,24 +12,24 @@
  */
 package com.ibm.cloud.securityadvisor.notifications_api.v1.model;
 
+import com.google.gson.annotations.SerializedName;
 import com.ibm.cloud.sdk.core.service.model.GenericModel;
 
 /**
- * Response of deleted channel.
+ * PublicKeyGet.
  */
-public class TestChannelResponse extends GenericModel {
+public class PublicKeyGet extends GenericModel {
 
-  protected String test;
+  @SerializedName("public_key")
+  protected String publicKey;
 
   /**
-   * Gets the test.
+   * Gets the publicKey.
    *
-   * response status.
-   *
-   * @return the test
+   * @return the publicKey
    */
-  public String getTest() {
-    return test;
+  public String getPublicKey() {
+    return publicKey;
   }
 }
 

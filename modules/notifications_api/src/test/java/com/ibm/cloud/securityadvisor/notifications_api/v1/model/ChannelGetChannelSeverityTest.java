@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2020.
+ * (C) Copyright IBM Corp. 2021.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -14,34 +14,28 @@
 package com.ibm.cloud.securityadvisor.notifications_api.v1.model;
 
 import com.ibm.cloud.sdk.core.service.model.FileWithMetadata;
+import com.ibm.cloud.securityadvisor.notifications_api.v1.model.ChannelGetChannelSeverity;
 import com.ibm.cloud.securityadvisor.notifications_api.v1.utils.TestUtilities;
 
 import java.io.InputStream;
-
 import java.util.HashMap;
 import java.util.List;
-
 import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 /**
- * Unit test class for the ChannelResponseDefinition model.
+ * Unit test class for the ChannelGetChannelSeverity model.
  */
-public class ChannelResponseDefinitionTest {
+public class ChannelGetChannelSeverityTest {
   final HashMap<String, InputStream> mockStreamMap = TestUtilities.createMockStreamMap();
   final List<FileWithMetadata> mockListFileWithMetadata = TestUtilities.creatMockListFileWithMetadata();
 
   @Test
-  public void testChannelResponseDefinition() throws Throwable {
-    ChannelResponseDefinition channelResponseDefinitionModel = new ChannelResponseDefinition();
-    assertNull(channelResponseDefinitionModel.getChannelId());
-    assertNull(channelResponseDefinitionModel.getName());
-    assertNull(channelResponseDefinitionModel.getDescription());
-    assertNull(channelResponseDefinitionModel.getType());
-    assertNull(channelResponseDefinitionModel.getSeverity());
-    assertNull(channelResponseDefinitionModel.getEndpoint());
-    assertNull(channelResponseDefinitionModel.isEnabled());
-    assertNull(channelResponseDefinitionModel.getAlertSource());
-    assertNull(channelResponseDefinitionModel.getFrequency());
+  public void testChannelGetChannelSeverity() throws Throwable {
+    ChannelGetChannelSeverity channelGetChannelSeverityModel = new ChannelGetChannelSeverity();
+    assertNull(channelGetChannelSeverityModel.isCritical());
+    assertNull(channelGetChannelSeverityModel.isHigh());
+    assertNull(channelGetChannelSeverityModel.isMedium());
+    assertNull(channelGetChannelSeverityModel.isLow());
   }
 }
