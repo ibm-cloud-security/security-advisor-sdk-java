@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/2.0.0...2.0.1) (2021-04-20)
+
+
+### Bug Fixes
+
+* **'Maven Central deployment':** removed coverage-reports from deployment package ([4fc5f59](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/4fc5f5925ad27f3aeb645f87eac9fcdd2ee6bbb9))
+
 # [2.0.0](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.2.3...2.0.0) (2021-04-20)
 
 
