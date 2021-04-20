@@ -1,7 +1,7 @@
 [![Build Status](https://api.travis-ci.org/ibm-cloud-security/security-advisor-sdk-java.svg?branch=master)](https://travis-ci.org/github/ibm-cloud-security/security-advisor-sdk-java)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
-# IBM Cloud Security Advisor Java SDK Version 1.2.3
+# IBM Cloud Security Advisor Java SDK Version 2.0.0
 Java client library to interact with various [IBM Cloud Security Advisor](https://cloud.ibm.com/apidocs?category=security).
 
 Disclaimer: this SDK is being released initially as a **pre-release** version.
@@ -21,7 +21,7 @@ Changes might occur which impact applications that use this SDK.
 
 <!-- toc -->
 
-- [IBM Cloud Security Advisor Java SDK Version 1.2.3](#ibm-cloud-security-advisor-java-sdk-version-116)
+- [IBM Cloud Security Advisor Java SDK Version 2.0.0](#ibm-cloud-security-advisor-java-sdk-version-116)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Prerequisites](#prerequisites)
@@ -46,8 +46,8 @@ The IBM Cloud Security Advisor Java SDK allows developers to programmatically in
 
 Service Name | Artifact Coordinates
 --- | --- 
-[IBM Cloud Security Advisor Findings API](https://cloud.ibm.com/apidocs/findings) | com.ibm.cloud.securityadvisor:findings_api:1.2.3
-[IBM Cloud Security Advisor Notifications API](https://cloud.ibm.com/apidocs/notifications) | com.ibm.cloud.securityadvisor:notifications_api:1.2.3
+[IBM Cloud Security Advisor Findings API](https://cloud.ibm.com/apidocs/findings) | com.ibm.cloud.securityadvisor:findings_api:2.0.0
+[IBM Cloud Security Advisor Notifications API](https://cloud.ibm.com/apidocs/notifications) | com.ibm.cloud.securityadvisor:notifications_api:2.0.0
 
 ## Prerequisites
 
@@ -58,7 +58,7 @@ Service Name | Artifact Coordinates
 * Java 8 or above.
 
 ## Installation
-The current version of this SDK is: 1.2.3
+The current version of this SDK is: 2.0.0
 
 Each service's artifact coordinates are listed in the table above.
 
@@ -71,13 +71,13 @@ artifact coordinates (group id, artifact id and version) for the service, like t
 <dependency>
     <groupId>com.ibm.cloud</groupId>
     <artifactId>securityadvisor</artifactId>
-    <version>1.2.3</version>
+    <version>2.0.0</version>
 </dependency>
 ```
 
 ##### Gradle
 ```gradle
-'com.ibm.cloud:securityadvisor:1.2.3'
+'com.ibm.cloud:securityadvisor:2.0.0'
 ```
 
 ## Authentication
