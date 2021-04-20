@@ -1,3 +1,13 @@
+# [2.0.0](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.2.3...2.0.0) (2021-04-20)
+
+
+* Merge pull request #36 from ibm-cloud-security/update_resp ([c4e7ce1](https://github.com/ibm-cloud-security/security-advisor-sdk-java/commit/c4e7ce1306081db9f57009414d702ff27b1fe9e4)), closes [#36](https://github.com/ibm-cloud-security/security-advisor-sdk-java/issues/36)
+
+
+### BREAKING CHANGES
+
+* updated response definitions
+
 ## [1.2.3](https://github.com/ibm-cloud-security/security-advisor-sdk-java/compare/1.2.2...1.2.3) (2021-04-06)
 
 
