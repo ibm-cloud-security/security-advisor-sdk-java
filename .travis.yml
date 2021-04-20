@@ -21,9 +21,7 @@ env:
 
 stages:
   - name: Build
-  - name: Semantic Release
-    if: branch = master AND type = push AND fork = false
-  - name: Maven Central Deployment
+  - name: Release & Deployment
     if: branch = master AND type = push AND fork = false
 
 before_install:
@@ -42,8 +40,9 @@ jobs:
         token: $GH_TOKEN
         local_dir: target/site/apidocs
 
-    - stage: Semantic Release
-      name: Semantic Release
+    - stage: Release & Deployment
+      name: Release & Deployment
+      jdk: openjdk8
       install:
         - sudo apt-get update
         - sudo apt-get install python
@@ -55,10 +54,6 @@ jobs:
         - npm install @semantic-release/git
         - npm install @semantic-release/github
       script:
-        - mvn clean package -DskipTests && npx semantic-release
-
-    - stage: Maven Central Deployment
-      name: Maven Central Deployment
-      jdk: openjdk8
-      script:
+        - mvn clean package -DskipTests
+        - npx semantic-release
         - mvn deploy $MVN_ARGS -DskipTests -P central
