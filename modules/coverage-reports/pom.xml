@@ -16,6 +16,11 @@
     <!-- >>> Replace "My Services" with the service category for the project -->
     <name>Security Advisor Coverage Reports</name>
 
+    <properties>
+        <maven.deploy.skip>true</maven.deploy.skip>
+        <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
+    </properties>
+
     <dependencies>
         <!--
             There should be a dependency for EACH module in the project.
