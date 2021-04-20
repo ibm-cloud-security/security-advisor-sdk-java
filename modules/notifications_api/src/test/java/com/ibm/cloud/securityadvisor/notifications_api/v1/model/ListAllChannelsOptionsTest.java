@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2020.
+ * (C) Copyright IBM Corp. 2021.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -14,13 +14,12 @@
 package com.ibm.cloud.securityadvisor.notifications_api.v1.model;
 
 import com.ibm.cloud.sdk.core.service.model.FileWithMetadata;
+import com.ibm.cloud.securityadvisor.notifications_api.v1.model.ListAllChannelsOptions;
 import com.ibm.cloud.securityadvisor.notifications_api.v1.utils.TestUtilities;
 
 import java.io.InputStream;
-
 import java.util.HashMap;
 import java.util.List;
-
 import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
@@ -35,10 +34,12 @@ public class ListAllChannelsOptionsTest {
   public void testListAllChannelsOptions() throws Throwable {
     ListAllChannelsOptions listAllChannelsOptionsModel = new ListAllChannelsOptions.Builder()
       .accountId("testString")
+      .transactionId("testString")
       .limit(Long.valueOf("26"))
       .skip(Long.valueOf("26"))
       .build();
     assertEquals(listAllChannelsOptionsModel.accountId(), "testString");
+    assertEquals(listAllChannelsOptionsModel.transactionId(), "testString");
     assertEquals(listAllChannelsOptionsModel.limit(), Long.valueOf("26"));
     assertEquals(listAllChannelsOptionsModel.skip(), Long.valueOf("26"));
   }

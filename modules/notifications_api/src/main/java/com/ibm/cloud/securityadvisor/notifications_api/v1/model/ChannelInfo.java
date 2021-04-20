@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2020.
+ * (C) Copyright IBM Corp. 2021.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -12,24 +12,39 @@
  */
 package com.ibm.cloud.securityadvisor.notifications_api.v1.model;
 
+import com.google.gson.annotations.SerializedName;
 import com.ibm.cloud.sdk.core.service.model.GenericModel;
 
 /**
- * Response of get channel.
+ * The returned response when a channel is created or updated.
  */
-public class GetChannelResponse extends GenericModel {
+public class ChannelInfo extends GenericModel {
 
-  protected GetChannelResponseChannel channel;
+  @SerializedName("channel_id")
+  protected String channelId;
+  @SerializedName("status_code")
+  protected Long statusCode;
 
   /**
-   * Gets the channel.
+   * Gets the channelId.
    *
-   * Response including channels.
+   * The ID of the created channel.
    *
-   * @return the channel
+   * @return the channelId
    */
-  public GetChannelResponseChannel getChannel() {
-    return channel;
+  public String getChannelId() {
+    return channelId;
+  }
+
+  /**
+   * Gets the statusCode.
+   *
+   * response code.
+   *
+   * @return the statusCode
+   */
+  public Long getStatusCode() {
+    return statusCode;
   }
 }
 

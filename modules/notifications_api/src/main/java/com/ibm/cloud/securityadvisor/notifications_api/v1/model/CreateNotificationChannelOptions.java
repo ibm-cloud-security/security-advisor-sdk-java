@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2020.
+ * (C) Copyright IBM Corp. 2021.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -49,6 +49,7 @@ public class CreateNotificationChannelOptions extends GenericModel {
   protected List<String> severity;
   protected Boolean enabled;
   protected List<NotificationChannelAlertSourceItem> alertSource;
+  protected String transactionId;
 
   /**
    * Builder.
@@ -62,6 +63,7 @@ public class CreateNotificationChannelOptions extends GenericModel {
     private List<String> severity;
     private Boolean enabled;
     private List<NotificationChannelAlertSourceItem> alertSource;
+    private String transactionId;
 
     private Builder(CreateNotificationChannelOptions createNotificationChannelOptions) {
       this.accountId = createNotificationChannelOptions.accountId;
@@ -72,6 +74,7 @@ public class CreateNotificationChannelOptions extends GenericModel {
       this.severity = createNotificationChannelOptions.severity;
       this.enabled = createNotificationChannelOptions.enabled;
       this.alertSource = createNotificationChannelOptions.alertSource;
+      this.transactionId = createNotificationChannelOptions.transactionId;
     }
 
     /**
@@ -225,6 +228,17 @@ public class CreateNotificationChannelOptions extends GenericModel {
       this.alertSource = alertSource;
       return this;
     }
+
+    /**
+     * Set the transactionId.
+     *
+     * @param transactionId the transactionId
+     * @return the CreateNotificationChannelOptions builder
+     */
+    public Builder transactionId(String transactionId) {
+      this.transactionId = transactionId;
+      return this;
+    }
   }
 
   protected CreateNotificationChannelOptions(Builder builder) {
@@ -244,6 +258,7 @@ public class CreateNotificationChannelOptions extends GenericModel {
     severity = builder.severity;
     enabled = builder.enabled;
     alertSource = builder.alertSource;
+    transactionId = builder.transactionId;
   }
 
   /**
@@ -337,6 +352,17 @@ public class CreateNotificationChannelOptions extends GenericModel {
    */
   public List<NotificationChannelAlertSourceItem> alertSource() {
     return alertSource;
+  }
+
+  /**
+   * Gets the transactionId.
+   *
+   * The transaction id for the request in uuid v4 format.
+   *
+   * @return the transactionId
+   */
+  public String transactionId() {
+    return transactionId;
   }
 }
 

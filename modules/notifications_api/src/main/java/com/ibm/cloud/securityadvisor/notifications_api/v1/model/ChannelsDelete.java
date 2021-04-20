@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2020.
+ * (C) Copyright IBM Corp. 2021.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -12,24 +12,24 @@
  */
 package com.ibm.cloud.securityadvisor.notifications_api.v1.model;
 
-import java.util.List;
-
 import com.ibm.cloud.sdk.core.service.model.GenericModel;
 
 /**
- * Response including channels.
+ * The returned response when more than one channel is deleted.
  */
-public class ListChannelsResponse extends GenericModel {
+public class ChannelsDelete extends GenericModel {
 
-  protected List<ChannelResponseDefinition> channels;
+  protected String message;
 
   /**
-   * Gets the channels.
+   * Gets the message.
    *
-   * @return the channels
+   * response message.
+   *
+   * @return the message
    */
-  public List<ChannelResponseDefinition> getChannels() {
-    return channels;
+  public String getMessage() {
+    return message;
   }
 }
 

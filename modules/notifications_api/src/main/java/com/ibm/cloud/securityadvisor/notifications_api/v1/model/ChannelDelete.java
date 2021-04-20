@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2020.
+ * (C) Copyright IBM Corp. 2021.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -12,14 +12,28 @@
  */
 package com.ibm.cloud.securityadvisor.notifications_api.v1.model;
 
+import com.google.gson.annotations.SerializedName;
 import com.ibm.cloud.sdk.core.service.model.GenericModel;
 
 /**
- * Response of all deleted channels.
+ * The returned response when a channel is deleted.
  */
-public class BulkDeleteChannelsResponse extends GenericModel {
+public class ChannelDelete extends GenericModel {
 
+  @SerializedName("channel_id")
+  protected String channelId;
   protected String message;
+
+  /**
+   * Gets the channelId.
+   *
+   * The ID of the deleted channel.
+   *
+   * @return the channelId
+   */
+  public String getChannelId() {
+    return channelId;
+  }
 
   /**
    * Gets the message.

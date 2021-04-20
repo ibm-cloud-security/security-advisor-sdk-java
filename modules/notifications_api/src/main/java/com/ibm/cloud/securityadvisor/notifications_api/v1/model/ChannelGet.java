@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2020.
+ * (C) Copyright IBM Corp. 2021.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -12,38 +12,24 @@
  */
 package com.ibm.cloud.securityadvisor.notifications_api.v1.model;
 
-import com.google.gson.annotations.SerializedName;
 import com.ibm.cloud.sdk.core.service.model.GenericModel;
 
 /**
- * Response of deleted channel.
+ * The returned response when get channel is run.
  */
-public class DeleteChannelResponse extends GenericModel {
+public class ChannelGet extends GenericModel {
 
-  @SerializedName("channel_id")
-  protected String channelId;
-  protected String message;
+  protected ChannelGetChannel channel;
 
   /**
-   * Gets the channelId.
+   * Gets the channel.
    *
-   * id of the created channel.
+   * Response including channels.
    *
-   * @return the channelId
+   * @return the channel
    */
-  public String getChannelId() {
-    return channelId;
-  }
-
-  /**
-   * Gets the message.
-   *
-   * response message.
-   *
-   * @return the message
-   */
-  public String getMessage() {
-    return message;
+  public ChannelGetChannel getChannel() {
+    return channel;
   }
 }
 

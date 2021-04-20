@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2020.
+ * (C) Copyright IBM Corp. 2021.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -20,7 +20,7 @@ import com.ibm.cloud.sdk.core.service.model.GenericModel;
 /**
  * Response including channels.
  */
-public class ChannelResponseDefinition extends GenericModel {
+public class ChannelGetChannel extends GenericModel {
 
   /**
    * Type of callback URL.
@@ -35,17 +35,17 @@ public class ChannelResponseDefinition extends GenericModel {
   protected String name;
   protected String description;
   protected String type;
-  protected ChannelResponseDefinitionSeverity severity;
+  protected ChannelGetChannelSeverity severity;
   protected String endpoint;
   protected Boolean enabled;
   @SerializedName("alert_source")
-  protected List<ChannelResponseDefinitionAlertSourceItem> alertSource;
+  protected List<ChannelGetChannelAlertSourceItem> alertSource;
   protected String frequency;
 
   /**
    * Gets the channelId.
    *
-   * unique id of the channel.
+   * A unique ID for the channel.
    *
    * @return the channelId
    */
@@ -87,11 +87,11 @@ public class ChannelResponseDefinition extends GenericModel {
   /**
    * Gets the severity.
    *
-   * Severity of the notification.
+   * The severity of the notification.
    *
    * @return the severity
    */
-  public ChannelResponseDefinitionSeverity getSeverity() {
+  public ChannelGetChannelSeverity getSeverity() {
     return severity;
   }
 
@@ -109,7 +109,7 @@ public class ChannelResponseDefinition extends GenericModel {
   /**
    * Gets the enabled.
    *
-   * Channel is enabled or not. Default is disabled.
+   * Whether the channel is enabled. The default is disabled.
    *
    * @return the enabled
    */
@@ -122,7 +122,7 @@ public class ChannelResponseDefinition extends GenericModel {
    *
    * @return the alertSource
    */
-  public List<ChannelResponseDefinitionAlertSourceItem> getAlertSource() {
+  public List<ChannelGetChannelAlertSourceItem> getAlertSource() {
     return alertSource;
   }
 

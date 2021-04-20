@@ -1,5 +1,5 @@
 /*
- * (C) Copyright IBM Corp. 2020.
+ * (C) Copyright IBM Corp. 2021.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -20,15 +20,18 @@ import com.ibm.cloud.sdk.core.service.model.GenericModel;
 public class GetPublicKeyOptions extends GenericModel {
 
   protected String accountId;
+  protected String transactionId;
 
   /**
    * Builder.
    */
   public static class Builder {
     private String accountId;
+    private String transactionId;
 
     private Builder(GetPublicKeyOptions getPublicKeyOptions) {
       this.accountId = getPublicKeyOptions.accountId;
+      this.transactionId = getPublicKeyOptions.transactionId;
     }
 
     /**
@@ -65,12 +68,24 @@ public class GetPublicKeyOptions extends GenericModel {
       this.accountId = accountId;
       return this;
     }
+
+    /**
+     * Set the transactionId.
+     *
+     * @param transactionId the transactionId
+     * @return the GetPublicKeyOptions builder
+     */
+    public Builder transactionId(String transactionId) {
+      this.transactionId = transactionId;
+      return this;
+    }
   }
 
   protected GetPublicKeyOptions(Builder builder) {
     com.ibm.cloud.sdk.core.util.Validator.notEmpty(builder.accountId,
       "accountId cannot be empty");
     accountId = builder.accountId;
+    transactionId = builder.transactionId;
   }
 
   /**
@@ -91,6 +106,17 @@ public class GetPublicKeyOptions extends GenericModel {
    */
   public String accountId() {
     return accountId;
+  }
+
+  /**
+   * Gets the transactionId.
+   *
+   * The transaction id for the request in uuid v4 format.
+   *
+   * @return the transactionId
+   */
+  public String transactionId() {
+    return transactionId;
   }
 }
 
