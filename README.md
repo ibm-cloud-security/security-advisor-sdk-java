@@ -47,7 +47,7 @@ The IBM Cloud Security Advisor Java SDK allows developers to programmatically in
 Service Name | Artifact Coordinates
 --- | --- 
 [IBM Cloud Security Advisor Findings API](https://cloud.ibm.com/apidocs/findings) | com.ibm.cloud.securityadvisor:findings_api:2.0.1
-[IBM Cloud Security Advisor Notifications API](https://cloud.ibm.com/apidocs/notifications) | com.ibm.cloud.securityadvisor:notifications_api:2.0.1
+[IBM Cloud Security Advisor Notifications API](https://cloud.ibm.com/apidocs/security-compliance/si-notifications) | com.ibm.cloud.securityadvisor:notifications_api:2.0.1
 
 ## Prerequisites
 
