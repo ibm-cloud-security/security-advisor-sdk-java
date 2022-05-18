@@ -1,8 +1,8 @@
+# DEPRECATED
+The Security Insights feature is deprecated and will no longer be supported. Please migrate to new SDK https://github.com/IBM/scc-java-sdk
+
 [![Build Status](https://api.travis-ci.org/ibm-cloud-security/security-advisor-sdk-java.svg?branch=master)](https://travis-ci.org/github/ibm-cloud-security/security-advisor-sdk-java)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
-
-# DEPRECATED
-Please migrate to new SDK https://github.com/IBM/scc-java-sdk
 
 # IBM Cloud Security Advisor Java SDK Version 2.0.1
 Java client library to interact with various [IBM Cloud Security Advisor](https://cloud.ibm.com/apidocs?category=security).
